@@ -46,7 +46,7 @@ export default function Home() {
                                     </span>
                                 </h1>
                                 <p className="mt-3 text-base text-gray-900 mb-28 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                    "Write" tests in a no-code browser extension. Store results in source control. Tests
+                                    Stop coding tests, start record them. Store results in source control. Tests
                                     are entirely implementation details free. Update them only when UX changes.
                                 </p>
                                 <div className="mb-32 lg:hidden">
