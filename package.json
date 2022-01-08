@@ -6,7 +6,7 @@
   "license": "unlicensed",
   "private": true,
   "workspaces": [
-    "appactions.com"
+    "packages/*"
   ],
   "devDependencies": {
     "eslint": "^8.0.1",
@@ -14,11 +14,11 @@
     "lint-staged": "^11.2.3"
   },
   "husky": {
-      "hooks": {
-          "pre-commit": "lint-staged"
-      }
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
-      "*.{js,css,md}": "prettier --write"
+    "*.{js,css,md}": "prettier --write"
   }
 }
