@@ -42,12 +42,11 @@ export default function Home() {
                                 </h3>
                                 <h1 className="text-4xl font-extrabold tracking-tight sm:leading-none lg:text-5xl xl:text-6xl">
                                     <span className="md:block">
-                                        Effortless E2E testing for <span className="text-brand-green">React</span>.
+                                        Session-recording for <span className="text-brand-green">React</span>.
                                     </span>
                                 </h1>
                                 <p className="mt-3 text-base text-gray-900 mb-28 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                    Stop coding tests, start record them. Store results in source control. Tests
-                                    are entirely implementation details free. Update them only when UX changes.
+                                    Create high-quality, developer centric E2E tests by performing a single manual test.
                                 </p>
                                 <div className="mb-32 lg:hidden">
                                     <Demo />
@@ -61,7 +60,7 @@ export default function Home() {
                                 <FadeInSection>
                                     <div className="mt-32">
                                         <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                            High level
+                                            Convention based
                                         </h2>
                                         <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                                             <span className="text-brand-green">App Actions</span> is an abstraction on
@@ -298,6 +297,111 @@ export default function Home() {
                         </dd>
                     </div>
                 </dl>
+            </section>
+
+            <section className="relative px-4 pt-8 pb-16 mx-auto bg-white sm:pb-24 lg:pb-32 max-w-7xl lg:px-8" id="faq">
+                <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
+                    Frequently asked questions
+                </h2>
+                <div className="mt-8">
+                    <dl>
+                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+                            <dt className="text-lg font-semibold text-black md:col-span-5">
+                                What is the format of the course?
+                            </dt>
+                            <dd className="mt-2 md:mt-0 md:col-span-7">
+                                <p className="text-lg">
+                                    The course will include illustrated text, videos and coding exercises to keep your
+                                    learning experience interesting. There will also be a text only eBook version.
+                                </p>
+                            </dd>
+                        </div>
+                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+                            <dt className="text-lg font-semibold text-black md:col-span-5">
+                                What prerequisite knowledge must I have before I take this course?
+                            </dt>
+                            <dd className="mt-2 md:mt-0 md:col-span-7">
+                                <p className="text-lg">
+                                    Familiarity with JavaScript or general programming fundamentals will be helpful. You
+                                    don’t need to know any Rust before taking this course.
+                                </p>
+                            </dd>
+                        </div>
+                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+                            <dt className="text-lg font-semibold text-black md:col-span-5">
+                                I already know Rust. Should I take this course?
+                            </dt>
+                            <dd className="mt-2 md:mt-0 md:col-span-7">
+                                <p className="text-lg">
+                                    If you’re already familiar with Rust but would like to build on your knowledge, feel
+                                    free to take the course!
+                                </p>
+                            </dd>
+                        </div>
+                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+                            <dt className="text-lg font-semibold text-black md:col-span-5">
+                                What if I don’t like the course?
+                            </dt>
+                            <dd className="mt-2 md:mt-0 md:col-span-7">
+                                <p className="text-lg">
+                                    I’ll refund your purchase within 30 days, no questions asked! I would definitely
+                                    appreciate hearing what you didn’t like but that is not a requirement.
+                                </p>
+                            </dd>
+                        </div>
+                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+                            <dt className="text-lg font-semibold text-black md:col-span-5">
+                                Do you support purchasing power parity?
+                            </dt>
+                            <dd className="mt-2 md:mt-0 md:col-span-7">
+                                <p className="text-lg">
+                                    There will be a single price for preorders but the final course release will support
+                                    purchasing power parity.
+                                </p>
+                            </dd>
+                        </div>
+                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+                            <dt className="text-lg font-semibold text-black md:col-span-5">What if I get stuck?</dt>
+                            <dd className="mt-2 md:mt-0 md:col-span-7">
+                                <p className="text-lg">
+                                    The course comes with access to a private Discord channel where you’ll be able to
+                                    chat with other learners and me! I’ll be happy to answer your questions.
+                                </p>
+                            </dd>
+                        </div>
+                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+                            <dt className="text-lg font-semibold text-black md:col-span-5">
+                                How much will this course cost?
+                            </dt>
+                            <dd className="mt-2 md:mt-0 md:col-span-7">
+                                <p className="text-lg">
+                                    I haven’t decided on a final price yet and will as we get closer to release. Stay
+                                    tuned!
+                                </p>
+                            </dd>
+                        </div>
+                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+                            <dt className="text-lg font-semibold text-black md:col-span-5">
+                                Will there be a Discord group?
+                            </dt>
+                            <dd className="mt-2 md:mt-0 md:col-span-7">
+                                <p className="text-lg">
+                                    Yes! When you buy the course, you’ll be invited to a private Discord channel.
+                                </p>
+                            </dd>
+                        </div>
+                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
+                            <dt className="text-lg font-semibold text-black md:col-span-5">
+                                When will the course be released?
+                            </dt>
+                            <dd className="mt-2 md:mt-0 md:col-span-7">
+                                <p className="text-lg">
+                                    Preorders for the course open on Monday, the 20th of December, 2021 at 12:00 PM GMT.
+                                </p>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
             </section>
 
             <section className="relative">
