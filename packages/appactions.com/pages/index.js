@@ -42,11 +42,14 @@ export default function Home() {
                                 </h3>
                                 <h1 className="text-4xl font-extrabold tracking-tight sm:leading-none lg:text-5xl xl:text-6xl">
                                     <span className="md:block">
-                                        Session-recording for <span className="text-brand-green">React</span>.
+                                        Session-recording.{' '}
+                                        <span className="whitespace-nowrap">
+                                            For <span className="text-brand-green">React</span>.
+                                        </span>
                                     </span>
                                 </h1>
                                 <p className="mt-3 text-base text-gray-900 mb-28 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                    Create high-quality, developer centric E2E tests by performing a single manual test.
+                                    Create high-quality, developer centric E2E tests.
                                 </p>
                                 <div className="mb-32 lg:hidden">
                                     <Demo />
@@ -60,49 +63,40 @@ export default function Home() {
                                 <FadeInSection>
                                     <div className="mt-32">
                                         <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                            Convention based
+                                            Low maintanence
                                         </h2>
                                         <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                            <span className="text-brand-green">App Actions</span> is an abstraction on
-                                            Selenium to test React apps. It frees you from dealing with the low-level
-                                            API issues, so you can focus on creating great tests.
+                                            <span className="text-brand-green">App Actions</span> is an ...
                                         </p>
                                     </div>
                                 </FadeInSection>
                                 <FadeInSection>
-                                    <div className="my-32">
+                                    <div className="mt-32">
                                         <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                            Session-recording
+                                            Any React renderer
                                         </h2>
                                         <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                            Perform the user behavior once; our browser extension generates the test.
-                                            Just check in the resulting code in your version control system, and you are
-                                            done!
+                                            <span className="text-brand-green">App Actions</span> is an ...
                                         </p>
                                     </div>
                                 </FadeInSection>
                                 <FadeInSection>
-                                    <div className="my-32">
+                                    <div className="mt-32">
                                         <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                            Pattern-based selection
+                                            No flakiness
                                         </h2>
                                         <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                            Selecting elements by CSS selectors is not just a pain, it makes tests go
-                                            out of date pretty fast. Instead, App Actions select elements by patterns.
-                                            Default patterns are WAI-ARIA roles, but you can define custom ones.
+                                            <span className="text-brand-green">App Actions</span> is an ...
                                         </p>
                                     </div>
                                 </FadeInSection>
                                 <FadeInSection>
-                                    <div className="my-32">
+                                    <div className="mt-32">
                                         <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                            Low maintenance
+                                            Batteries included
                                         </h2>
                                         <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                            App Actions tests are entirely free of implementation details. This way, you
-                                            only have to touch a test next time when business logic changes. Because
-                                            tests are defined in YAML format, editing them does not require programming
-                                            skills.
+                                            <span className="text-brand-green">App Actions</span> is an ...
                                         </p>
                                     </div>
                                 </FadeInSection>
@@ -117,7 +111,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section
+            {/* <section
                 className="relative px-4 pt-8 pb-16 mx-auto bg-white sm:pb-24 lg:pb-32 max-w-7xl lg:px-8"
                 id="benefits"
             >
@@ -297,109 +291,81 @@ export default function Home() {
                         </dd>
                     </div>
                 </dl>
-            </section>
+            </section> */}
 
-            <section className="relative px-4 pt-8 pb-16 mx-auto bg-white sm:pb-24 lg:pb-32 max-w-7xl lg:px-8" id="faq">
+            <div className="relative bg-white pt-16 pb-32 overflow-hidden">
+                <div className="mt-24">
+                    <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+                        <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+                            <div>
+                                <div>
+                                    <span className="h-12 w-12 rounded-md flex items-center justify-center bg-brand-green text-white">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            className="w-6 h-6"
+                                            height="1em"
+                                            width="1em"
+                                            strokeWidth={1.5}
+                                            stroke="currentColor"
+                                            fill="transparent"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M0 0h24v24H0z" stroke="none" />
+                                            <rect x={4} y={4} width={16} height={16} rx={1} />
+                                            <path d="M4 8L20 8" />
+                                            <path d="M8 4L8 8" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div className="mt-6">
+                                    <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
+                                        Just a browser extension
+                                    </h2>
+                                    <p className="mt-4 text-lg text-gray-500">
+                                        Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada
+                                        faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis
+                                        sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.
+                                    </p>
+                                    {/* <div className="mt-6">
+                                        <a
+                                            href="#"
+                                            className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+                                        >
+                                            Get started
+                                        </a>
+                                    </div> */}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+                            <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                                <img
+                                    className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+                                    src="/img/browser-extension.png"
+                                    alt="Customer profile user interface"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section className="max-w-7xl mx-auto py-12 px-4 divide-y divide-gray-200 sm:px-6 lg:py-16 lg:px-8">
                 <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
                     Frequently asked questions
                 </h2>
                 <div className="mt-8">
-                    <dl>
-                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
-                            <dt className="text-lg font-semibold text-black md:col-span-5">
-                                What is the format of the course?
-                            </dt>
-                            <dd className="mt-2 md:mt-0 md:col-span-7">
-                                <p className="text-lg">
-                                    The course will include illustrated text, videos and coding exercises to keep your
-                                    learning experience interesting. There will also be a text only eBook version.
-                                </p>
-                            </dd>
-                        </div>
-                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
-                            <dt className="text-lg font-semibold text-black md:col-span-5">
-                                What prerequisite knowledge must I have before I take this course?
-                            </dt>
-                            <dd className="mt-2 md:mt-0 md:col-span-7">
-                                <p className="text-lg">
-                                    Familiarity with JavaScript or general programming fundamentals will be helpful. You
-                                    don’t need to know any Rust before taking this course.
-                                </p>
-                            </dd>
-                        </div>
-                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
-                            <dt className="text-lg font-semibold text-black md:col-span-5">
-                                I already know Rust. Should I take this course?
-                            </dt>
-                            <dd className="mt-2 md:mt-0 md:col-span-7">
-                                <p className="text-lg">
-                                    If you’re already familiar with Rust but would like to build on your knowledge, feel
-                                    free to take the course!
-                                </p>
-                            </dd>
-                        </div>
-                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
-                            <dt className="text-lg font-semibold text-black md:col-span-5">
-                                What if I don’t like the course?
-                            </dt>
-                            <dd className="mt-2 md:mt-0 md:col-span-7">
-                                <p className="text-lg">
-                                    I’ll refund your purchase within 30 days, no questions asked! I would definitely
-                                    appreciate hearing what you didn’t like but that is not a requirement.
-                                </p>
-                            </dd>
-                        </div>
-                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
-                            <dt className="text-lg font-semibold text-black md:col-span-5">
-                                Do you support purchasing power parity?
-                            </dt>
-                            <dd className="mt-2 md:mt-0 md:col-span-7">
-                                <p className="text-lg">
-                                    There will be a single price for preorders but the final course release will support
-                                    purchasing power parity.
-                                </p>
-                            </dd>
-                        </div>
-                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
-                            <dt className="text-lg font-semibold text-black md:col-span-5">What if I get stuck?</dt>
-                            <dd className="mt-2 md:mt-0 md:col-span-7">
-                                <p className="text-lg">
-                                    The course comes with access to a private Discord channel where you’ll be able to
-                                    chat with other learners and me! I’ll be happy to answer your questions.
-                                </p>
-                            </dd>
-                        </div>
-                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
-                            <dt className="text-lg font-semibold text-black md:col-span-5">
-                                How much will this course cost?
-                            </dt>
-                            <dd className="mt-2 md:mt-0 md:col-span-7">
-                                <p className="text-lg">
-                                    I haven’t decided on a final price yet and will as we get closer to release. Stay
-                                    tuned!
-                                </p>
-                            </dd>
-                        </div>
-                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
-                            <dt className="text-lg font-semibold text-black md:col-span-5">
-                                Will there be a Discord group?
-                            </dt>
-                            <dd className="mt-2 md:mt-0 md:col-span-7">
-                                <p className="text-lg">
-                                    Yes! When you buy the course, you’ll be invited to a private Discord channel.
-                                </p>
-                            </dd>
-                        </div>
-                        <div className="py-8 md:py-12 md:grid md:grid-cols-12 md:gap-12">
-                            <dt className="text-lg font-semibold text-black md:col-span-5">
-                                When will the course be released?
-                            </dt>
-                            <dd className="mt-2 md:mt-0 md:col-span-7">
-                                <p className="text-lg">
-                                    Preorders for the course open on Monday, the 20th of December, 2021 at 12:00 PM GMT.
-                                </p>
-                            </dd>
-                        </div>
+                    <dl className="divide-y divide-gray-200">
+                        {faqs.map(faq => (
+                            <div key={faq.id} className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8">
+                                <dt className="text-base font-medium text-gray-900 md:col-span-5">{faq.question}</dt>
+                                <dd className="mt-2 md:mt-0 md:col-span-7">
+                                    <p className="text-base text-gray-500">{faq.answer}</p>
+                                </dd>
+                            </div>
+                        ))}
                     </dl>
                 </div>
             </section>
@@ -425,3 +391,21 @@ export default function Home() {
         </>
     );
 }
+
+const faqs = [
+    {
+        id: 1,
+        question: "What's the best thing about Switzerland?",
+        answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    },
+    {
+        id: 2,
+        question: "What's the best thing about Switzerland?",
+        answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    },
+    {
+        id: 3,
+        question: "What's the best thing about Switzerland?",
+        answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    },
+];
