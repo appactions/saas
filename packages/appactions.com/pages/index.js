@@ -1,6 +1,5 @@
 import SignUp from 'components/signup';
 import Demo from 'components/demo';
-import FloatElement from 'components/float-element';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -10,9 +9,9 @@ export default function Home() {
                 <div className="mx-auto max-w-7xl">
                     <div className="lg:grid lg:grid-cols-12 lg:gap-8">
                         <div className="hidden mt-16 sm:mt-24 lg:mt-0 lg:col-span-6 lg:block">
-                            <FloatElement unLockAt={1150}>
+                            <div className="sticky top-8">
                                 <Demo />
-                            </FloatElement>
+                            </div>
                         </div>
                         <div className="px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
                             <div>
@@ -147,7 +146,11 @@ export default function Home() {
                         </div>
                         <div className="mt-12 sm:mt-16 lg:mt-0">
                             <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
-                                <img
+                                <motion.img
+                                    initial={{ opacity: 0, x: 40 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true, amount: 0.8 }}
+                                    transition={{ duration: 0.5, ease: 'easeOut' }}
                                     className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                                     src="/img/browser-extension.png"
                                     alt="Inbox user interface"
