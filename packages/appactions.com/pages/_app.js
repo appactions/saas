@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <title>App Actions</title>
+                <title>OLD TEXT</title>
                 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
                 {/* Hotjar Tracking Code for react-app-actions.com */}
                 <script
