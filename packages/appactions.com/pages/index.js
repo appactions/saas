@@ -1,7 +1,7 @@
 import SignUp from 'components/signup';
 import Demo from 'components/demo';
 import FloatElement from 'components/float-element';
-import FadeInSection from 'components/fade-in-section';
+import { motion } from 'framer-motion';
 
 export default function Home() {
     return (
@@ -65,46 +65,42 @@ export default function Home() {
                                     </p>
                                     <SignUp light />
                                 </div>
-                                <FadeInSection>
-                                    <div className="mt-32">
-                                        <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                            Low maintanence
-                                        </h2>
-                                        <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                            <span className="text-brand-green">App Actions</span> is an ...
-                                        </p>
-                                    </div>
-                                </FadeInSection>
-                                <FadeInSection>
-                                    <div className="mt-32">
-                                        <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                            Any React renderer
-                                        </h2>
-                                        <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                            <span className="text-brand-green">App Actions</span> is an ...
-                                        </p>
-                                    </div>
-                                </FadeInSection>
-                                <FadeInSection>
-                                    <div className="mt-32">
-                                        <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                            No flakiness
-                                        </h2>
-                                        <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                            <span className="text-brand-green">App Actions</span> is an ...
-                                        </p>
-                                    </div>
-                                </FadeInSection>
-                                <FadeInSection>
-                                    <div className="mt-32">
-                                        <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                            Batteries included
-                                        </h2>
-                                        <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                            <span className="text-brand-green">App Actions</span> is an ...
-                                        </p>
-                                    </div>
-                                </FadeInSection>
+
+                                <FeatureCard className="mt-32">
+                                    <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
+                                        Low maintanence
+                                    </h2>
+                                    <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                        <span className="text-brand-green">App Actions</span> is an ...
+                                    </p>
+                                </FeatureCard>
+
+                                <FeatureCard className="mt-32">
+                                    <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
+                                        Any React renderer
+                                    </h2>
+                                    <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                        <span className="text-brand-green">App Actions</span> is an ...
+                                    </p>
+                                </FeatureCard>
+
+                                <FeatureCard className="mt-32">
+                                    <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
+                                        No flakiness
+                                    </h2>
+                                    <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                        <span className="text-brand-green">App Actions</span> is an ...
+                                    </p>
+                                </FeatureCard>
+
+                                <FeatureCard className="mt-32">
+                                    <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
+                                        Batteries included
+                                    </h2>
+                                    <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                        <span className="text-brand-green">App Actions</span> is an ...
+                                    </p>
+                                </FeatureCard>
                             </div>
                         </div>
                     </div>
@@ -219,3 +215,17 @@ const faqs = [
         answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
     },
 ];
+
+function FeatureCard({ children, className }) {
+    return (
+        <motion.div
+            className={className}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+        >
+            {children}
+        </motion.div>
+    );
+}
