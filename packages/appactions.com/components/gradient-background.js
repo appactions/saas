@@ -22,8 +22,7 @@ function normalizeColor(hexCode) {
 //n = height
 class MiniGl {
     constructor(canvas, width, height, debug = false) {
-        const _miniGl = this,
-            debug_output = -1 !== document.location.search.toLowerCase().indexOf('debug=webgl');
+        const _miniGl = this;
         (_miniGl.canvas = canvas),
             (_miniGl.gl = _miniGl.canvas.getContext('webgl', {
                 antialias: true,
@@ -32,18 +31,17 @@ class MiniGl {
         const context = _miniGl.gl;
         width && height && this.setSize(width, height),
             _miniGl.lastDebugMsg,
-            (_miniGl.debug =
-                debug && debug_output
-                    ? function (e) {
-                          const t = new Date();
-                          t - _miniGl.lastDebugMsg > 1e3 && console.log('---'),
-                              console.log(
-                                  t.toLocaleTimeString() + Array(Math.max(0, 32 - e.length)).join(' ') + e + ': ',
-                                  ...Array.from(arguments).slice(1),
-                              ),
-                              (_miniGl.lastDebugMsg = t);
-                      }
-                    : () => {}),
+            (_miniGl.debug = debug
+                ? function (e) {
+                      const t = new Date();
+                      t - _miniGl.lastDebugMsg > 1e3 && console.log('---'),
+                          console.log(
+                              t.toLocaleTimeString() + Array(Math.max(0, 32 - e.length)).join(' ') + e + ': ',
+                              ...Array.from(arguments).slice(1),
+                          ),
+                          (_miniGl.lastDebugMsg = t);
+                  }
+                : () => {}),
             Object.defineProperties(_miniGl, {
                 Material: {
                     enumerable: false,
@@ -485,16 +483,34 @@ class Gradient {
                 this.isMouseDown = !1;
             }),
             e(this, 'animate', e => {
-                if (!this.shouldSkipFrame(e) || this.isMouseDown) {
-                    if (((this.t += Math.min(e - this.last, 1e3 / 15)), (this.last = e), this.isMouseDown)) {
-                        let e = 160;
-                        this.isMetaKey && (e = -160), (this.t += e);
-                    }
-                    (this.mesh.material.uniforms.u_time.value = this.t), this.minigl.render();
+                // const e = _e / 1000;
+                // if (!this.shouldSkipFrame(e) || this.isMouseDown) {
+                //     if (((this.t += Math.min(e - this.last, 1e3 / 15)), (this.last = e), this.isMouseDown)) {
+                //         let e = 160;
+                //         this.isMetaKey && (e = -160), (this.t += e);
+                //     }
+                //     (this.mesh.material.uniforms.u_time.value = this.t), this.minigl.render();
+                // }
+                // if (0 !== this.last && this.isStatic) return this.minigl.render(), void this.disconnect();
+                // /*this.isIntersecting && */ ( || this.isMouseDown) &&
+                //     requestAnimationFrame(this.animate);
+
+                if (!this.shouldSkipFrame(e)) {
+                    this.t += Math.min(e / 250 - this.last, 1e3 / 15);
+                    this.last = e / 250;
+                    this.mesh.material.uniforms.u_time.value = this.t;
+                    this.minigl.render();
                 }
-                if (0 !== this.last && this.isStatic) return this.minigl.render(), void this.disconnect();
-                /*this.isIntersecting && */ (this.conf.playing || this.isMouseDown) &&
+
+                if (0 !== this.last && this.isStatic) {
+                    this.minigl.render();
+                    this.disconnect();
+                    return;
+                }
+
+                if (this.conf.playing) {
                     requestAnimationFrame(this.animate);
+                }
             }),
             e(this, 'addIsLoadedClass', () => {
                 /*this.isIntersecting && */ !this.isLoadedClass &&
@@ -697,122 +713,7 @@ void main()
 
         // this.vertexShader = [this.shaderFiles.noise, this.shaderFiles.blend, this.shaderFiles.vertex].join('\n\n');
         this.vertexShader = `
-        //
-        // Description : Array and textureless GLSL 2D/3D/4D simplex
-        //               noise functions.
-        //      Author : Ian McEwan, Ashima Arts.
-        //  Maintainer : stegu
-        //     Lastmod : 20110822 (ijm)
-        //     License : Copyright (C) 2011 Ashima Arts. All rights reserved.
-        //               Distributed under the MIT License. See LICENSE file.
-        //               https://github.com/ashima/webgl-noise
-        //               https://github.com/stegu/webgl-noise
-        //
         
-        vec3 mod289(vec3 x) {
-          return x - floor(x * (1.0 / 289.0)) * 289.0;
-        }
-        
-        vec4 mod289(vec4 x) {
-          return x - floor(x * (1.0 / 289.0)) * 289.0;
-        }
-        
-        vec4 permute(vec4 x) {
-            return mod289(((x*34.0)+1.0)*x);
-        }
-        
-        vec4 taylorInvSqrt(vec4 r)
-        {
-          return 1.79284291400159 - 0.85373472095314 * r;
-        }
-        
-        float snoise(vec3 v)
-        {
-          const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
-          const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
-        
-        // First corner
-          vec3 i  = floor(v + dot(v, C.yyy) );
-          vec3 x0 =   v - i + dot(i, C.xxx) ;
-        
-        // Other corners
-          vec3 g = step(x0.yzx, x0.xyz);
-          vec3 l = 1.0 - g;
-          vec3 i1 = min( g.xyz, l.zxy );
-          vec3 i2 = max( g.xyz, l.zxy );
-        
-          //   x0 = x0 - 0.0 + 0.0 * C.xxx;
-          //   x1 = x0 - i1  + 1.0 * C.xxx;
-          //   x2 = x0 - i2  + 2.0 * C.xxx;
-          //   x3 = x0 - 1.0 + 3.0 * C.xxx;
-          vec3 x1 = x0 - i1 + C.xxx;
-          vec3 x2 = x0 - i2 + C.yyy; // 2.0*C.x = 1/3 = C.y
-          vec3 x3 = x0 - D.yyy;      // -1.0+3.0*C.x = -0.5 = -D.y
-        
-        // Permutations
-          i = mod289(i);
-          vec4 p = permute( permute( permute(
-                    i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
-                  + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))
-                  + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
-        
-        // Gradients: 7x7 points over a square, mapped onto an octahedron.
-        // The ring size 17*17 = 289 is close to a multiple of 49 (49*6 = 294)
-          float n_ = 0.142857142857; // 1.0/7.0
-          vec3  ns = n_ * D.wyz - D.xzx;
-        
-          vec4 j = p - 49.0 * floor(p * ns.z * ns.z);  //  mod(p,7*7)
-        
-          vec4 x_ = floor(j * ns.z);
-          vec4 y_ = floor(j - 7.0 * x_ );    // mod(j,N)
-        
-          vec4 x = x_ *ns.x + ns.yyyy;
-          vec4 y = y_ *ns.x + ns.yyyy;
-          vec4 h = 1.0 - abs(x) - abs(y);
-        
-          vec4 b0 = vec4( x.xy, y.xy );
-          vec4 b1 = vec4( x.zw, y.zw );
-        
-          //vec4 s0 = vec4(lessThan(b0,0.0))*2.0 - 1.0;
-          //vec4 s1 = vec4(lessThan(b1,0.0))*2.0 - 1.0;
-          vec4 s0 = floor(b0)*2.0 + 1.0;
-          vec4 s1 = floor(b1)*2.0 + 1.0;
-          vec4 sh = -step(h, vec4(0.0));
-        
-          vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
-          vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
-        
-          vec3 p0 = vec3(a0.xy,h.x);
-          vec3 p1 = vec3(a0.zw,h.y);
-          vec3 p2 = vec3(a1.xy,h.z);
-          vec3 p3 = vec3(a1.zw,h.w);
-        
-        //Normalise gradients
-          vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
-          p0 *= norm.x;
-          p1 *= norm.y;
-          p2 *= norm.z;
-          p3 *= norm.w;
-        
-        // Mix final noise value
-          vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
-          m = m * m;
-          return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),
-                                        dot(p2,x2), dot(p3,x3) ) );
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        //
-        // https://github.com/jamieowen/glsl-blend
-        //
-        
-        // Normal
         
         vec3 blendNormal(vec3 base, vec3 blend) {
         return blend;
@@ -830,9 +731,10 @@ void main()
         varying vec3 v_color;
         
         void main() {
-          float time = u_time * u_global.noiseSpeed;
+        //   float time = u_time * u_global.noiseSpeed;
+          float time = u_time;
         
-          vec2 noiseCoord = resolution * uvNorm * u_global.noiseFreq;
+        //   vec2 noiseCoord = resolution * uvNorm * u_global.noiseFreq;
         
           vec2 st = 1. - uvNorm.xy;
         
@@ -849,59 +751,15 @@ void main()
           // Up-down shift to offset incline
           float offset = resolution.x / 2.0 * u_vertDeform.incline * mix(u_vertDeform.offsetBottom, u_vertDeform.offsetTop, uv.y);
         
-          //
-          // Vertex noise
-          //
-        
-          float noise = snoise(vec3(
-            noiseCoord.x * u_vertDeform.noiseFreq.x + time * u_vertDeform.noiseFlow,
-            noiseCoord.y * u_vertDeform.noiseFreq.y,
-            time * u_vertDeform.noiseSpeed + u_vertDeform.noiseSeed
-          )) * u_vertDeform.noiseAmp;
-        
-          // Fade noise to zero at edges
-          noise *= 1.0 - pow(abs(uvNorm.y), 2.0);
-        
-          // Clamp to 0
-          noise = max(0.0, noise);
-        
+          
           vec3 pos = vec3(
             position.x,
-            position.y + tilt + incline + noise - offset,
+            position.y + tilt + incline - offset,
             position.z
           );
         
-          //
-          // Vertex color, to be passed to fragment shader
-          //
-        
-          if (u_active_colors[0] == 1.) {
-            v_color = u_baseColor;
-          }
-        
-          for (int i = 0; i < u_waveLayers_length; i++) {
-            if (u_active_colors[i + 1] == 1.) {
-              WaveLayers layer = u_waveLayers[i];
-        
-              float noise = smoothstep(
-                layer.noiseFloor,
-                layer.noiseCeil,
-                snoise(vec3(
-                  noiseCoord.x * layer.noiseFreq.x + time * layer.noiseFlow,
-                  noiseCoord.y * layer.noiseFreq.y,
-                  time * layer.noiseSpeed + layer.noiseSeed
-                )) / 2.0 + 0.5
-              );
-        
-              v_color = blendNormal(v_color, layer.color, pow(noise, 4.));
-            }
-          }
-        
-          //
-          // Finish
-          //
-        
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+        //   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+          gl_Position = vec4(pos, 1.0);
         }
 `;
 
