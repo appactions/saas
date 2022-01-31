@@ -837,7 +837,7 @@ void main()
  * Gradient.updateFrequency(freq)
  */
 
-export default function GradientBackground({ colors, style = {} }) {
+export default function GradientBackground({ height = 600, colors, style = {} }) {
     const [gradient] = useState(() => new Gradient(colors));
     const ref = useRef(null);
 
@@ -850,7 +850,7 @@ export default function GradientBackground({ colors, style = {} }) {
     return (
         <canvas
             ref={ref}
-            style={{ width: '100vw', height: '100vh', maxWidth: '100%', position: 'absolute', zIndex: -100, ...style }}
+            style={{ width: '100vw', maxWidth: '100%', height, position: 'absolute', zIndex: -100, ...style }}
         />
     );
 }

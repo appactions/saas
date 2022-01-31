@@ -1,12 +1,12 @@
 import SignUp from 'components/signup';
 import Demo from 'components/demo';
 import { motion } from 'framer-motion';
-import GradientBackground from 'components/gradient-background';
+import GradientBackground from 'components/gradient-background-2';
 
 export default function Home() {
     return (
         <>
-            <GradientBackground colors={['#86BA90', '#ace2b7', '#86BA90', '#ace2b7']} style={{ height: 400 }} />
+            <GradientBackground colors={['#86BA90', '#ace2b7', '#86BA90', '#ace2b7']} height={400} />
             <section className="mt-16 mb-32 sm:mt-24">
                 <div className="mx-auto max-w-7xl">
                     <div className="lg:grid lg:grid-cols-12 lg:gap-8">
