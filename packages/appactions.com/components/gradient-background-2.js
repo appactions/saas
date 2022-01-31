@@ -9,7 +9,14 @@ class Gradient {
     constructor(height, colors) {
         this.height = height;
         this.playing = false;
+        this.time = 1253106;
+        this.last = 0;
+        
         this.density = [0.06, 0.16];
+        this.angle = 0;
+        this.seed = 5;
+        this.amp = 320;
+        
         this.colors = colors
             .map(hex => {
                 //Check if shorthand hex value was used and double the length so the conversion in normalizeColor will work.
@@ -191,9 +198,9 @@ void main()
         }
 
         if (!this.shouldSkipFrame(delta)) {
-            this.t += Math.min(delta / 250 - this.last, 1e3 / 15);
+            this.time += Math.min(delta / 250 - this.last, 1e3 / 15);
             this.last = delta / 250;
-            this.mesh.material.uniforms.u_time.value = this.t;
+            this.mesh.material.uniforms.u_time.value = this.time;
             this.minigl.render();
         }
 
