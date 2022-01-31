@@ -9,7 +9,7 @@ export default function Home() {
                 <div className="mx-auto max-w-7xl">
                     <div className="lg:grid lg:grid-cols-12 lg:gap-8">
                         <div className="hidden mt-16 sm:mt-24 lg:mt-0 lg:col-span-6 lg:block">
-                            <div className="sticky top-8">
+                            <div className="sticky top-32">
                                 <Demo />
                             </div>
                         </div>
@@ -70,7 +70,15 @@ export default function Home() {
                                         Low maintanence
                                     </h2>
                                     <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        <span className="text-brand-green">App Actions</span> is an ...
+                                        End-to-end tests traditionally require a lot of developer attention. They are
+                                        flaky, slow, and changes make them out of date way too often. This makes E2E
+                                        testing an expensive investment.
+                                    </p>
+                                    <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                        App Actions uses a <span className="highlight">declarative API</span> to define
+                                        user flows. Implementation details are moved to drivers, living outside of the
+                                        test scope. This makes sure code refactors don't break tests, because under the
+                                        hood changes won't affect how users use your app.
                                     </p>
                                 </FeatureCard>
 
@@ -79,7 +87,9 @@ export default function Home() {
                                         Any React renderer
                                     </h2>
                                     <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        <span className="text-brand-green">App Actions</span> is an ...
+                                        Because App Actions integrates with the React Virtual DOM, the host platform is
+                                        just an implementation detail. This means you can use App Actions with ReactDOM,
+                                        React Native, or even with React Three Fiber.
                                     </p>
                                 </FeatureCard>
 
@@ -88,7 +98,8 @@ export default function Home() {
                                         No flakiness
                                     </h2>
                                     <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        <span className="text-brand-green">App Actions</span> is an ...
+                                        Our advanced error retry mechanism will amaze you... sometime in the future,
+                                        when you realize an entire class of E2E issues are gone.
                                     </p>
                                 </FeatureCard>
 
@@ -97,7 +108,8 @@ export default function Home() {
                                         Batteries included
                                     </h2>
                                     <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        <span className="text-brand-green">App Actions</span> is an ...
+                                        App Actions is a conventions based library. We baked in many best practices, so
+                                        you don't have to wonder what's the best way to do something.
                                     </p>
                                 </FeatureCard>
                             </div>
@@ -137,9 +149,8 @@ export default function Home() {
                                         Just a browser extension
                                     </h2>
                                     <p className="mt-4 text-lg text-gray-500">
-                                        Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada
-                                        faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis
-                                        sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.
+                                        Other tools require you to use a dedicated browser. App Actions's only interface
+                                        is a new tab on the standard developer tool window.
                                     </p>
                                 </div>
                             </div>
@@ -167,8 +178,8 @@ export default function Home() {
                 </h2>
                 <div className="mt-8">
                     <dl className="divide-y divide-gray-200">
-                        {faqs.map(faq => (
-                            <div key={faq.id} className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8">
+                        {faqs.map((faq, index) => (
+                            <div key={index} className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8">
                                 <dt className="text-base font-medium text-gray-900 md:col-span-5">{faq.question}</dt>
                                 <dd className="mt-2 md:mt-0 md:col-span-7">
                                     <p className="text-base text-gray-500">{faq.answer}</p>
@@ -203,19 +214,36 @@ export default function Home() {
 
 const faqs = [
     {
-        id: 1,
-        question: "What's the best thing about Switzerland?",
-        answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+        question: 'How does this compare to Cypress?',
+        answer: 'Our current release is a plugin for Cypress. In the future, it will be reduced to a single browser extension, to be a standalone solution.',
     },
     {
-        id: 2,
-        question: "What's the best thing about Switzerland?",
-        answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+        question: "What's the benefit of using this instead of just plain Cypress?",
+        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
     },
     {
-        id: 3,
-        question: "What's the best thing about Switzerland?",
-        answer: "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+        question: "What's the learning curve?",
+        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+    },
+    {
+        question: 'Does the session recording work with react-three-fiber?',
+        answer: 'Yes! All features work across all React renderers.',
+    },
+    {
+        question: 'What type of projects find the most value in the current version?',
+        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+    },
+    {
+        question: 'My question is not in this list. Who can answer me?',
+        answer: (
+            <>
+                We are going to set up a Discord soon, but in the meantime, feel free to slide into my DMs:{' '}
+                <a className="underline" href="https://twitter.com/miklosme" target="_blank" rel="noopener noreferrer">
+                    @miklosme
+                </a>
+                .
+            </>
+        ),
     },
 ];
 
