@@ -190,7 +190,7 @@ class Gradient {
     };
 
     init = el => {
-        this.minigl = new MiniGL(el, null, null, true);
+        this.minigl = new MiniGL(el);
 
         this.material = this.createMaterial();
         this.geometry = new this.minigl.PlaneGeometry();
