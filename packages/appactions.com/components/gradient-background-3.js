@@ -23,11 +23,10 @@ function createMulticolorMaterial({ colors }) {
     colors = colors.map(hexColorToNumber).map(normalizeColor);
 
     const vertex = `
+varying vec2 v_texcoord;
+
 void main() {
   //  float time = u_time;
-
-  uv;
-  uvNorm;
 
   float tilt = resolution.y / 2.0 * uvNorm.y;
 
@@ -38,21 +37,45 @@ void main() {
   );
 
   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+  v_texcoord = uv;
 }
 `;
 
     const fragment = `
-varying vec3 v_color;
+varying vec2 v_texcoord;
 
 void main() {
-  vec3 color = vec3(1,0,1);
-  gl_FragColor = vec4(color, 1.0);
+    vec3 l = mix(bl, tl, v_texcoord.t);
+    vec3 r = mix(br, tr, v_texcoord.t);
+    vec3 c = mix(l, r, v_texcoord.s);
+    gl_FragColor = vec4(c, 1);
 }
 `;
+
+const tl = [254/255, 217/255, 138/255];
+const tr = [252/255, 252/255, 252/255];
+const bl = [ 18/255, 139/255, 184/255];
+const br = [203/255,  79/255, 121/255];
 
     const uniforms = {
         u_time: new this.minigl.Uniform({
             value: 0,
+        }),
+        tl: new this.minigl.Uniform({
+            value: tl,
+            type: 'vec3',
+        }),
+        tr: new this.minigl.Uniform({
+            value: tr,
+            type: 'vec3',
+        }),
+        bl: new this.minigl.Uniform({
+            value: bl,
+            type: 'vec3',
+        }),
+        br: new this.minigl.Uniform({
+            value: br,
+            type: 'vec3',
         }),
     };
 
@@ -77,7 +100,7 @@ class Gradient {
         this.geometry = new this.minigl.PlaneGeometry();
         this.mesh = new this.minigl.Mesh(this.geometry, this.material);
         this.mesh.geometry.setTopology(2, 2);
-        this.mesh.wireframe = true;
+        // this.mesh.wireframe = true;
 
         this.playing = true;
 
