@@ -52,29 +52,24 @@ void main() {
 }
 `;
 
-const tl = [254/255, 217/255, 138/255];
-const tr = [252/255, 252/255, 252/255];
-const bl = [ 18/255, 139/255, 184/255];
-const br = [203/255,  79/255, 121/255];
-
     const uniforms = {
         u_time: new this.minigl.Uniform({
             value: 0,
         }),
         tl: new this.minigl.Uniform({
-            value: tl,
+            value: colors[0],
             type: 'vec3',
         }),
         tr: new this.minigl.Uniform({
-            value: tr,
+            value: colors[1],
             type: 'vec3',
         }),
         bl: new this.minigl.Uniform({
-            value: bl,
+            value: colors[2],
             type: 'vec3',
         }),
         br: new this.minigl.Uniform({
-            value: br,
+            value: colors[3],
             type: 'vec3',
         }),
     };
