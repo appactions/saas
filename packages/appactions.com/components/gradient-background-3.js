@@ -26,6 +26,9 @@ function createMulticolorMaterial({ colors }) {
 void main() {
   //  float time = u_time;
 
+  uv;
+  uvNorm;
+
   float tilt = resolution.y / 2.0 * uvNorm.y;
 
   vec3 pos = vec3(
