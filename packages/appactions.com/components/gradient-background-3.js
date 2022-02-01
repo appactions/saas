@@ -94,8 +94,6 @@ class Gradient {
         this.material = this.createMaterial(this.materialArgs);
         this.geometry = new this.minigl.PlaneGeometry();
         this.mesh = new this.minigl.Mesh(this.geometry, this.material);
-        this.mesh.geometry.setTopology(2, 2);
-        // this.mesh.wireframe = true;
 
         this.playing = true;
 
