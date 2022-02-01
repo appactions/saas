@@ -1,7 +1,7 @@
 import SignUp from 'components/signup';
 import Demo from 'components/demo';
 import { motion } from 'framer-motion';
-import GradientBackground from 'components/gradient-background-2';
+import GradientBackground from 'components/gradient-background-3';
 
 export default function Home() {
     return (
