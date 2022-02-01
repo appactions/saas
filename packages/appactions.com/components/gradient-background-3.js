@@ -66,13 +66,6 @@ class Gradient {
         this.time = 1253106;
         this.last = 0;
 
-        this.density = [0.06, 0.16];
-        this.angle = 0;
-        this.seed = 5;
-        this.amp = 320;
-        this.freqX = 14e-5;
-        this.freqY = 29e-5;
-
         this.createMaterial = createMaterial;
         this.materialArgs = materialArgs;
     }
@@ -83,6 +76,7 @@ class Gradient {
         this.material = this.createMaterial(this.materialArgs);
         this.geometry = new this.minigl.PlaneGeometry();
         this.mesh = new this.minigl.Mesh(this.geometry, this.material);
+        this.mesh.geometry.setTopology(2, 2);
         this.mesh.wireframe = true;
 
         this.playing = true;
@@ -96,9 +90,6 @@ class Gradient {
         this.width = window.innerWidth;
         this.minigl.setSize(this.width, this.height);
         this.minigl.setOrthographicCamera();
-        this.xSegCount = Math.ceil(this.width * this.density[0]);
-        this.ySegCount = Math.ceil(this.height * this.density[1]);
-        this.mesh.geometry.setTopology(this.xSegCount, this.ySegCount);
         this.mesh.geometry.setSize(this.width, this.height);
     };
 
