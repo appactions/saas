@@ -48,14 +48,13 @@ export default function Home() {
                                 </h3>
                                 <h1 className="text-4xl font-extrabold tracking-tight sm:leading-none lg:text-5xl xl:text-6xl">
                                     <span className="md:block">
-                                        Session-recording.{' '}
                                         <span className="whitespace-nowrap">
-                                            For <span className="text-brand-green">React</span>.
+                                            Session-recording for <span className="text-brand-green">React</span>.
                                         </span>
                                     </span>
                                 </h1>
                                 <p className="mt-3 text-base text-gray-900 mb-28 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                    Create high-quality, developer centric E2E tests.
+                                    Create high-quality end-to-end tests, that scale.
                                 </p>
                                 <div className="mb-32 lg:hidden">
                                     <Demo />
@@ -72,36 +71,30 @@ export default function Home() {
                                         Low maintanence
                                     </h2>
                                     <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        End-to-end tests traditionally require a lot of developer attention. They are
-                                        flaky, slow, and changes make them out of date way too often. This makes E2E
-                                        testing an expensive investment.
-                                    </p>
-                                    <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        App Actions uses a <span className="highlight">declarative API</span> to define
-                                        user flows. Implementation details are moved to drivers, living outside of the
-                                        test scope. This makes sure code refactors don't break tests, because under the
-                                        hood changes won't affect how users use your app.
+                                        Spend significantly less time maintaing your E2E test suite. App Action tests
+                                        are completely implementation details free, meaning a refactor will never break
+                                        your tests.
                                     </p>
                                 </FeatureCard>
 
                                 <FeatureCard className="mt-32">
                                     <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                        Any React renderer
+                                        Any platform
                                     </h2>
                                     <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        Because App Actions integrates with the React Virtual DOM, the host platform is
-                                        just an implementation detail. This means you can use App Actions with ReactDOM,
-                                        React Native, or even with React Three Fiber.
+                                        When an app is written in React, the host platform is just an implementation
+                                        detail. You can use App Actions with ReactDOM, React Native, or even with React
+                                        Three Fiber.
                                     </p>
                                 </FeatureCard>
 
                                 <FeatureCard className="mt-32">
                                     <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
-                                        No flakiness
+                                        Amazing reliability
                                     </h2>
                                     <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        Our advanced error retry mechanism will amaze you... sometime in the future,
-                                        when you realize an entire class of E2E issues are gone.
+                                        Integrating directly with the app code is the perfect level of abstraction: the
+                                        test runner always know what's happening, and false results will never happen.
                                     </p>
                                 </FeatureCard>
 
@@ -110,8 +103,8 @@ export default function Home() {
                                         Batteries included
                                     </h2>
                                     <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                                        App Actions is a conventions based library. We baked in many best practices, so
-                                        you don't have to wonder what's the best way to do something.
+                                        We baked in many best practices, so you don't have to wonder what's the best way
+                                        to do something.
                                     </p>
                                 </FeatureCard>
                             </div>
@@ -174,6 +167,21 @@ export default function Home() {
                 </div>
             </div>
 
+            <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+                <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
+                    E2E - implementation details = FLOW
+                </h2>
+                <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                    End-to-end tests traditionally require a lot of developer attention. They are flaky, slow, and
+                    changes make them out of date way too often. This makes E2E testing an expensive investment.
+                </p>
+                <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                    App Actions uses a <span className="highlight">declarative API</span> to define user flows.
+                    Implementation details are moved to drivers, living outside of the test scope. This makes sure code
+                    refactors don't break tests, because under the hood changes won't affect how users use your app.
+                </p>
+            </section>
+
             <section className="max-w-7xl mx-auto py-12 px-4 divide-y divide-gray-200 sm:px-6 lg:py-16 lg:px-8">
                 <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">
                     Frequently asked questions
@@ -217,23 +225,23 @@ export default function Home() {
 const faqs = [
     {
         question: 'How does this compare to Cypress?',
-        answer: 'Our current release is a plugin for Cypress. In the future, it will be reduced to a single browser extension, to be a standalone solution.',
+        answer: 'Our current release is a plugin for Cypress. In the future, it will become a standalone browser extension.',
     },
     {
         question: "What's the benefit of using this instead of just plain Cypress?",
-        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+        answer: 'App Actions tests are authored on a high level, which enables session-recording, better quality tests, and much better experience when it comes to running and maintaining the test suite. Also, we support react-three-fiber!',
     },
     {
         question: "What's the learning curve?",
-        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+        answer: 'There are two parts of using App Action, the integration and the actual test writing. The first requires learning our API, but that does not concern the whole team, and once done, requires surprisingly little attention. The testing part almost have no learning curve. In ideal situtation the while test writing happens as session-recording, which is just manual testing your app once.',
     },
     {
         question: 'Does the session recording work with react-three-fiber?',
         answer: 'Yes! All features work across all React renderers.',
     },
     {
-        question: 'What type of projects find the most value in the current version?',
-        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+        question: 'Who finds the most value in the current version?',
+        answer: "There are two types of teams in this category. (1) React Three Fiber users: session-recording based tests are probably perform much better for non-conventional app (like non-CRUDs). (2) A team that wants to introduce testing to a large project, that doesn't have a lot of tests. Writing unit tests for somebody else's code is very difficult and slow process. Doing session-recording instead is way better investment.",
     },
     {
         question: 'My question is not in this list. Who can answer me?',
