@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useMotionValue, useTransform, animate } from 'framer-motion';
 
 class MulticolorMaterial {
     constructor(minigl) {
@@ -62,11 +63,8 @@ void main() {
         this.uniforms.time.value += delta;
     };
 
-    setArguments = ({ tl, tr, bl, br }) => {
-        this.material.uniforms.tl.value = fixColorFormat(tl);
-        this.material.uniforms.tr.value = fixColorFormat(tr);
-        this.material.uniforms.bl.value = fixColorFormat(bl);
-        this.material.uniforms.br.value = fixColorFormat(br);
+    setArguments = (key, value) => {
+        this.material.uniforms[key].value = fixColorFormat(value);
     };
 }
 
@@ -88,8 +86,8 @@ class Gradient {
         this.mesh = new this.minigl.Mesh(this.geometry, this.material);
         this.resize();
 
-        // this.playing = true
-        // requestAnimationFrame(this.animate)
+        this.playing = true;
+        requestAnimationFrame(this.animate);
         // window.addEventListener("resize", this.resize)
     };
 
@@ -101,24 +99,24 @@ class Gradient {
         this.mesh.geometry.setSize(this.width, this.height);
     };
 
-    // animate = (delta) => {
-    //     if (0 !== this.last && this.isStatic) {
-    //         this.minigl.render()
-    //         this.disconnect()
-    //         return
-    //     }
+    animate = delta => {
+        if (0 !== this.last && this.isStatic) {
+            this.minigl.render();
+            this.disconnect();
+            return;
+        }
 
-    //     if (!this.shouldSkipFrame(delta)) {
-    //         this.time += Math.min(delta - this.last, 1e3 / 15)
-    //         this.last = delta
-    //         this.mesh.material.uniforms.u_time.value = this.time
-    //         this.minigl.render()
-    //     }
+        if (!this.shouldSkipFrame(delta)) {
+            this.time += Math.min(delta - this.last, 1e3 / 15);
+            this.last = delta;
+            // this.mesh.material.uniforms.u_time.value = this.time
+            this.minigl.render();
+        }
 
-    //     if (this.playing) {
-    //         requestAnimationFrame(this.animate)
-    //     }
-    // }
+        if (this.playing) {
+            requestAnimationFrame(this.animate);
+        }
+    };
 
     shouldSkipFrame = delta => {
         return !!window.document.hidden || !this.playing || parseInt(delta, 10) % 2 === 0;
@@ -148,11 +146,42 @@ export default function GradientBackground({ tl, tr, bl, br, style }) {
     }, [ref.current]);
 
     useEffect(() => {
-        gradient.materialManager.setArguments({ tl, tr, bl, br });
-        if (gradient.minigl) {
-            gradient.minigl.render();
-        }
+        gradient.materialManager.setArguments('tl', tl);
+        gradient.materialManager.setArguments('tr', tr);
+        gradient.materialManager.setArguments('bl', bl);
+        gradient.materialManager.setArguments('br', br);
+        // if (gradient.minigl) {
+        //     gradient.minigl.render();
+        // }
     }, [tl, tr, bl, br]);
+
+    const x = useMotionValue(0);
+
+    useEffect(() => {
+        const controls = animate(x, 100, {
+            duration: 2,
+            // repeatDelay: 1,
+            repeat: Infinity,
+            repeatType: 'reverse',
+        });
+
+        return controls.stop;
+    });
+
+    const background = useTransform(x, [0, 100], ['#a0d', '#0bf']);
+    // useEffect(() => {
+    //     x.set(100)
+    // }, [])
+    useEffect(
+        () =>
+            background.onChange(latest => {
+                gradient.materialManager.setArguments('tl', latest);
+                // if (gradient.minigl) {
+                //     gradient.minigl.render();
+                // }
+            }),
+        [],
+    );
 
     return <canvas ref={ref} style={style} />;
 }
@@ -564,11 +593,13 @@ class MiniGL {
 //
 
 function rgbToHex(rgb) {
-    if (rgb.startsWith('rgb(')) {
+    // in case of rgba we droppign the alpha value
+    if (rgb.startsWith('rgb(') || rgb.startsWith('rgba(')) {
         // Choose correct separator
         let sep = rgb.indexOf(',') > -1 ? ',' : ' ';
         // Turn "rgb(r,g,b)" into [r,g,b]
-        rgb = rgb.substr(4).split(')')[0].split(sep);
+        const headLength = rgb.startsWith('rgb(') ? 4 : 5;
+        rgb = rgb.substr(headLength).split(')')[0].split(sep);
 
         let r = (+rgb[0]).toString(16),
             g = (+rgb[1]).toString(16),
