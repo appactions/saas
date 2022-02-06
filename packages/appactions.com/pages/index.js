@@ -2,10 +2,12 @@ import SignUp from 'components/signup';
 import Demo from 'components/demo';
 import GradientBackground from 'components/gradient-background-4';
 import { motion } from 'framer-motion';
+import HeroAnimation from 'https://framer.com/m/HeroAnimation-jX7q.js@mAxnzyZZOS2PYrehklUj';
 
 export default function Home() {
     return (
         <>
+            <HeroAnimation />
             <GradientBackground tl={'#86BA90'} tr={'#ace2b7'} bl={'#86BA90'} br={'#ace2b7'} />
             <section className="mt-16 mb-32 sm:mt-24">
                 <div className="mx-auto max-w-7xl">
