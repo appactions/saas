@@ -10,11 +10,6 @@ export const features = [
             'In React apps, your choice of renderer is just an implementation detail. So is in App Actions. We support all renderers, including react-three-fiber.',
     },
     {
-        title: 'Amazing reliability',
-        subtitle:
-            "Integrating directly with the app code is the perfect level of abstraction: the test runner always know what's happening, and false results will never happen.",
-    },
-    {
         title: 'Enhanced stability',
         subtitle:
             'Integrating with React has a serious benefit: the test runner can make informed decisions based on your app’s state, making significantly more stable tests.',
