@@ -70,12 +70,13 @@ void main() {
 }
 
 class Gradient {
-    constructor(MaterialManager) {
+    constructor(height, MaterialManager) {
+        this.height = height;
+        this.MaterialManager = MaterialManager;
+
         this.playing = false;
         this.time = 1253106;
         this.last = 0;
-
-        this.MaterialManager = MaterialManager;
     }
 
     init = el => {
@@ -89,12 +90,11 @@ class Gradient {
 
         this.playing = true;
         requestAnimationFrame(this.animate);
-        // window.addEventListener("resize", this.resize)
+        window.addEventListener('resize', this.resize);
     };
 
     resize = () => {
         this.width = window.innerWidth;
-        this.height = 300; // TODO
         this.minigl.setSize(this.width, this.height);
         this.minigl.setOrthographicCamera();
         this.mesh.geometry.setSize(this.width, this.height);
@@ -124,7 +124,7 @@ class Gradient {
     };
 
     disconnect = () => {
-        // window.removeEventListener("resize", this.resize)
+        window.removeEventListener('resize', this.resize);
     };
 }
 
@@ -133,15 +133,8 @@ function choose(...args) {
     return args[index];
 }
 
-/**
- * These annotations control how your component sizes
- * Learn more: https://www.framer.com/docs/guides/auto-sizing
- *
- * @framerSupportedLayoutWidth any
- * @framerSupportedLayoutHeight any
- */
-export default function GradientBackground({ tl, tr, bl, br, style }) {
-    const [gradient] = useState(() => new Gradient(MulticolorMaterial));
+export default function GradientBackground({ tl, tr, bl, br, height = 300, style = {} }) {
+    const [gradient] = useState(() => new Gradient(height, MulticolorMaterial));
     const ref = useRef(null);
 
     useEffect(() => {
@@ -203,7 +196,12 @@ export default function GradientBackground({ tl, tr, bl, br, style }) {
         );
     }, []);
 
-    return <canvas ref={ref} style={style} />;
+    return (
+        <canvas
+            ref={ref}
+            style={{ width: '100vw', maxWidth: '100%', height, position: 'absolute', zIndex: -100, ...style }}
+        />
+    );
 }
 
 GradientBackground.defaultProps = {
