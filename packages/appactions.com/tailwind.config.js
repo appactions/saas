@@ -14,6 +14,7 @@ module.exports = {
                     tan: '#DFA06E',
                     brown: '#412722',
                 },
+                white: colors.white,
             },
             fontFamily: {
                 // reorder list to resembe more to VSCode

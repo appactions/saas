@@ -1,12 +1,14 @@
 import SignUp from 'components/signup';
 import Demo from 'components/demo';
-import GradientBackground from 'components/gradient-background-4';
+import Logo from 'components/logo';
+import GradientBackground from 'components/gradient-background-5';
 import { motion } from 'framer-motion';
 import Hero from 'components/hero';
 import CallToActionEmail from 'components/call-to-action-email';
 import Features from 'components/features';
 import Extension from 'components/extension';
 import Questions from 'components/questions';
+// import HeroAnimation from 'https://framer.com/m/HeroAnimation-jX7q.js@mAxnzyZZOS2PYrehklUj';
 
 export default function Home() {
     return (
@@ -85,5 +87,3 @@ export default function Home() {
         </>
     );
 }
-
-

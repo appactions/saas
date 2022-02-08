@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Header from 'components/header';
 import Footer from 'components/footer';
-import Main from 'components/main';
+import GradientBackground from 'components/gradient-background-5';
+
 import './style.css';
 
 function MyApp({ Component, pageProps }) {
@@ -27,6 +28,12 @@ function MyApp({ Component, pageProps }) {
             </Head>
 
             <div className="flex flex-col justify-between min-h-screen">
+                <GradientBackground
+                    tl={['#CA3CFF', '#FF809D']}
+                    tr={['#FBACBE', '#C32EFA']}
+                    bl={['#EC7D10', '#9DCDA7']}
+                    br={['#ACE2B7', '#D97512']}
+                />
                 <Header />
 
                 <Component {...pageProps} />

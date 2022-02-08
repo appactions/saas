@@ -1,0 +1,3 @@
+import{jsx as _jsx}from"react/jsx-runtime";export function BackgroundBlur(Component){return props=>{return(/*#__PURE__*/ _jsx(Component,{...props,style:{...props.style,backdropFilter:"blur(6px)"}}));};}
+export const __FramerMetadata__ = {"exports":{"BackgroundBlur":{"type":"reactHoc","name":"BackgroundBlur","annotations":{"framerContractVersion":"1"}},"__FramerMetadata__":{"type":"variable"}}}
+//# sourceMappingURL=./Filters.map
