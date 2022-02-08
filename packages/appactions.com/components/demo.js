@@ -83,35 +83,40 @@ function Demo() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <div className="lg:grid lg:grid-cols-12 lg:pr-4" data-demo="container">
-            <Cursor step={step} />
-            <div className="block mx-auto mb-8 overflow-hidden font-mono bg-gray-200 border shadow-xl pointer-events-none rounded-xl demo-window-size ">
-                <div className="flex w-full h-8 pl-2 bg-gray-300">
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-green-500 rounded-full"></span>
-                    <span className="flex-1 font-sans text-center text-gray-600 leading-8 -ml-28" data-demo="header">
-                        Your React App
-                    </span>
+        <div className="relative">
+            <div className="lg:grid lg:grid-cols-12 lg:pr-4" data-demo="container">
+                <Cursor step={step} />
+                <div className="block mx-auto mb-8 overflow-hidden font-mono bg-gray-200 border shadow-xl pointer-events-none rounded-xl demo-window-size lg:col-span-6">
+                    <div className="flex w-full h-8 pl-2 bg-gray-300">
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-green-500 rounded-full"></span>
+                        <span
+                            className="flex-1 font-sans text-center text-gray-600 leading-8 -ml-28"
+                            data-demo="header"
+                        >
+                            Your React App
+                        </span>
+                    </div>
+                    <div className="p-4 overflow-hidden h-96">
+                        <AppMockup step={step} />
+                    </div>
                 </div>
-                <div className="p-4 overflow-hidden h-96">
-                    <AppMockup step={step} />
-                </div>
-            </div>
-            <div className="block mx-auto overflow-hidden font-mono bg-gray-800 border shadow-xl rounded-xl demo-window-size sm:mx-auto">
-                <div className="flex w-full h-8 pl-2 bg-gray-700">
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-green-500 rounded-full"></span>
-                    <span className="flex-1 font-sans text-center text-gray-300 leading-8 -ml-28">
-                        submit-page.yml — IDE
-                    </span>
-                </div>
-                <div
-                    className="py-2 overflow-hidden text-left text-gray-200 pl-14 h-96 dark-scrollbar"
-                    data-demo="code"
-                >
-                    <TestCode step={step} />
+                <div className="block mx-auto overflow-hidden font-mono bg-gray-800 border shadow-xl rounded-xl demo-window-size sm:mx-auto lg:col-span-6">
+                    <div className="flex w-full h-8 pl-2 bg-gray-700">
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-green-500 rounded-full"></span>
+                        <span className="flex-1 font-sans text-center text-gray-300 leading-8 -ml-28">
+                            submit-page.yml — IDE
+                        </span>
+                    </div>
+                    <div
+                        className="py-2 overflow-hidden text-left text-gray-200 pl-14 h-96 dark-scrollbar"
+                        data-demo="code"
+                    >
+                        <TestCode step={step} />
+                    </div>
                 </div>
             </div>
         </div>

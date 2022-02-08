@@ -3,20 +3,30 @@ import FeatureCard from './feature-card';
 const Features = () => (
     <section>
         <FeatureCard className="mt-32">
-            <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">Low maintanence</h2>
-            <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                E2E tests traditionally required a lot of maintenance. We figured out a way to separate implementation
-                details from the test declaration in a better way. This results in future-proof tests that only need
-                your attention when UX changes.
-            </p>
+            <div className="flex text-left">
+                <div className="max-h-full h-30 bg-zinc-900 w-1/2 border-solid border-yellow-300 border-2"></div>
+                <div>
+                    <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">Low maintanence</h2>
+                    <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                        E2E tests traditionally required a lot of maintenance. We figured out a way to separate
+                        implementation details from the test declaration in a better way. This results in future-proof
+                        tests that only need your attention when UX changes.
+                    </p>
+                </div>
+            </div>
         </FeatureCard>
 
         <FeatureCard className="mt-32">
-            <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">All React renderers</h2>
-            <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                In React apps, your choice of renderer is just an implementation detail. So is in App Actions. We
-                support all renderers, including react-three-fiber.
-            </p>
+            <div className="flex text-right">
+                <div>
+                    <h2 className="my-4 text-4xl font-slab text-gray md:text-5xl lg:text-6xl">All React renderers</h2>
+                    <p className="mt-3 text-base text-gray-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                        In React apps, your choice of renderer is just an implementation detail. So is in App Actions.
+                        We support all renderers, including react-three-fiber.
+                    </p>
+                </div>
+                <div className="max-h-full h-30 bg-zinc-900 w-1/2 border-solid border-yellow-300 border-2"></div>
+            </div>
         </FeatureCard>
 
         <FeatureCard className="mt-32">
