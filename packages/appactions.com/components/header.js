@@ -10,11 +10,11 @@ function Header() {
                         <Link href="/">
                             <a className="block p-2 w-52 text-brand-green">
                                 <span className="sr-only">Workflow</span>
-                                <Logo />
+                                App Actions
                             </a>
                         </Link>
                     </div>
-                    {/* <div className="-my-2 -mr-2 md:hidden">
+                    <div className="-my-2 -mr-2 md:hidden">
                         <button
                             type="button"
                             className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
@@ -22,21 +22,21 @@ function Header() {
                         >
                             <span className="sr-only">Open menu</span>
                         </button>
-                    </div> */}
+                    </div>
                     <nav className="hidden lg:flex space-x-10">
                         <Link href="/#what">
                             <a className="text-xl font-medium text-gray-500 border-b-4 border-transparent hover:text-brand-green hover:border-brand-green">
-                                What
+                                Docs
                             </a>
                         </Link>
                         <Link href="/#how">
                             <a className="text-xl font-medium text-gray-500 border-b-4 border-transparent hover:text-brand-green hover:border-brand-green">
-                                How
+                                Getting started
                             </a>
                         </Link>
                         <Link href="/#about">
                             <a className="text-xl font-medium text-gray-500 border-b-4 border-transparent hover:text-brand-green hover:border-brand-green">
-                                About
+                                Book a demo
                             </a>
                         </Link>
                     </nav>

@@ -117,7 +117,7 @@ function SignUp({ label = 'Sign up', light }) {
                         id="email"
                         type="email"
                         name="email"
-                        placeholder="Enter your email"
+                        placeholder="you@domain.com"
                         disabled={status === STATUSES.SUBMITTING}
                         className={`py-2 font-sans text-lg font-medium placeholder-gray-400 border-2 rounded-l-lg text-gray ${
                             light ? 'border-brand-green' : 'border-gray-800'
