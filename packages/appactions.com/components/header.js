@@ -26,12 +26,12 @@ function Header() {
                         </button>
                     </div>
                     <nav className="hidden lg:flex space-x-10">
-                        <Link href="/#what">
+                        <Link href="https://docs.appactions.com/">
                             <a className="text-xl font-medium text-white border-b-4 border-transparent hover:text-brand-green hover:border-brand-green">
                                 Docs
                             </a>
                         </Link>
-                        <Link href="/#how">
+                        <Link href="https://docs.appactions.com/#getting-started">
                             <a className="text-xl font-medium text-white border-b-4 border-transparent hover:text-brand-green hover:border-brand-green">
                                 Getting started
                             </a>
