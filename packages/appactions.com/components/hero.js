@@ -9,7 +9,7 @@ const Hero = () => (
                 App Actions is a next generation testing tool for React:
                 declarative interface, low maintenance, test recording, enhanced
                 stability, incremental adaptation. Supports all React renderers,
-                including react-three-fiber.
+                including <span className="whitespace-nowrap">react-three-fiber.</span>
             </p>
         </div>
     </section>
