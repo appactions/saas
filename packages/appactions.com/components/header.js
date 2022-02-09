@@ -8,7 +8,7 @@ function Header() {
                 <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
                     <div className="flex justify-start lg:w-0 lg:flex-1">
                         <Link href="/">
-                            <a className="text-xl font-medium block p-2 w-52 text-white opacity-70">
+                            <a className="text-xl font-medium block p-2 w-52 text-white opacity-80">
                                 <span className="inline-block w-9 h-6 align-middle mr-2">
                                     <Logo />
                                 </span>
@@ -27,17 +27,17 @@ function Header() {
                     </div>
                     <nav className="hidden lg:flex space-x-10">
                         <Link href="https://docs.appactions.com/">
-                            <a className="text-xl font-medium text-white opacity-70 border-b-2 border-transparent hover:border-white">
+                            <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
                                 Docs
                             </a>
                         </Link>
                         <Link href="https://docs.appactions.com/#getting-started">
-                            <a className="text-xl font-medium text-white opacity-70 border-b-2 border-transparent hover:border-white">
+                            <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
                                 Getting started
                             </a>
                         </Link>
                         <Link href="/#demo">
-                            <a className="text-xl font-medium text-white opacity-70 border-b-2 border-transparent hover:border-white">
+                            <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
                                 Book a demo
                             </a>
                         </Link>

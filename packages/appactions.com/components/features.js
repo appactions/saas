@@ -7,7 +7,7 @@ const Features = () => (
             const textAlign = index % 2 ? 'text-left flex-row' : 'text-right flex-row-reverse';
 
             return (
-                <FeatureCard className="mt-32">
+                <FeatureCard className="mt-32" key={index}>
                     <div className={`flex ${textAlign}`}>
                         <div className="max-h-full h-30 bg-zinc-900 w-1/2 border-solid border-yellow-300 border-2"></div>
                         <div>
