@@ -56,7 +56,9 @@ function SignUp({ label = 'Sign up', light }) {
                         </svg>
                     </div>
                     <div className="ml-3">
-                        <h3 className="text-sm font-medium text-green-800">Success! Thank you for your interest.</h3>
+                        <h3 className="text-sm font-medium text-green-800">
+                            Success! Thank you for your interest.
+                        </h3>
                         {/* <div className="mt-2 text-sm text-green-700">
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum
@@ -90,7 +92,9 @@ function SignUp({ label = 'Sign up', light }) {
                         </svg>
                     </div>
                     <div className="ml-3">
-                        <h3 className="text-sm font-medium text-red-800">Something went wrong.</h3>
+                        <h3 className="text-sm font-medium text-red-800">
+                            Something went wrong.
+                        </h3>
                         <button
                             className="mt-2 text-sm text-red-700 underline"
                             onClick={event => {
@@ -128,7 +132,9 @@ function SignUp({ label = 'Sign up', light }) {
                         type="submit"
                         disabled={status === STATUSES.SUBMITTING}
                         className={`inline-flex items-center px-3 py-2 font-sans text-lg font-bold tracking-wider text-white uppercase border-2 rounded-r-lg ${
-                            light ? 'bg-brand-green border-brand-green' : 'bg-gray-800 border-gray-800'
+                            light
+                                ? 'bg-brand-green border-brand-green'
+                                : 'bg-gray-800 border-gray-800'
                         }`}
                     >
                         {label}

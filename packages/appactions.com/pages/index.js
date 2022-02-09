@@ -5,6 +5,7 @@ import CallToActionEmail from 'components/call-to-action-email';
 import Features from 'components/features';
 import Extension from 'components/extension';
 import Questions from 'components/questions';
+import Subscribe from 'components/subscribe';
 
 export default function Home() {
     return (
@@ -30,8 +31,15 @@ export default function Home() {
             </section>
 
             <Extension />
-
             <Questions />
+            <Subscribe />
+
+            {/* <div className="mt-10 sm:mt-12">
+                <p className="my-3 font-sans font-bold tracking-wider text-black uppercase text-md md:text-lg">
+                    SIGN UP TO HEAR AS SOON AS WE LAUNCH!
+                </p>
+                <SignUp light label="Subscibe" />
+            </div> */}
         </>
     );
 }

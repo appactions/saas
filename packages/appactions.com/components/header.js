@@ -16,28 +16,22 @@ function Header() {
                             </a>
                         </Link>
                     </div>
-                    <div className="md:hidden">
-                        <button
-                            type="button"
-                            className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
-                            aria-expanded="false"
-                        >
-                            <span className="sr-only">Open menu</span>
-                        </button>
-                    </div>
-                    <nav className="hidden lg:flex space-x-10">
+                    <nav className="lg:flex space-x-10">
                         <Link href="https://docs.appactions.com/">
                             <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
                                 Docs
                             </a>
                         </Link>
                         <Link href="https://docs.appactions.com/#getting-started">
-                            <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
+                            <a className="hidden sm:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
                                 Getting started
                             </a>
                         </Link>
-                        <Link target="_blank" href="https://calendly.com/miklosme/demo-with-miklos">
-                            <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
+                        <Link
+                            target="_blank"
+                            href="https://calendly.com/miklosme/demo-with-miklos"
+                        >
+                            <a className="hidden sm:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
                                 Book a demo
                             </a>
                         </Link>
