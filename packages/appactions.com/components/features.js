@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Heart } from 'phosphor-react';
+import { Rainbow, Clock, ShieldCheckered, ArrowSquareUpRight, Student, Atom, ArrowsIn, Article, VideoCamera, Code } from 'phosphor-react';
 
 const Features = () => (
     <section className="bg-white">
@@ -7,34 +7,37 @@ const Features = () => (
             <article className="w-full py-10 md:py-14 lg:py-20 border-gray-500 border-opacity-10 border-b-2 !pt-0">
                 <div className="lg:flex">
                     <div className="flex flex-col sm:items-center lg:items-start lg:w-1/2">
-                        <Heart className="w-20 h-auto" />
+                        <Rainbow className="w-20 h-auto" />
                         <h3 className="gotham font-medium text-gray-700 leading-tight text-3xl sm:text-4xl  pt-10 sm:text-center lg:text-left">
-                            GraphQL Edge Caching
+                            Built for developers
                         </h3>
-                        <p className="gotham font-medium mx-auto sm:leading-snug text-lg md:text-2xl lg:mt-3 mt-2 lg:!text-left text-gray-700 text-opacity-60 text-left sm:text-center">
-                            Make your GraphQL API blazing fast worldwide, not
-                            just in us-east-1.
-                        </p>
+                        {/* <p className="gotham font-medium mx-auto sm:leading-snug text-lg md:text-2xl lg:mt-3 mt-2 lg:!text-left text-gray-700 text-opacity-60 text-left sm:text-center">
+                            (...)
+                        </p> */}
                         <div className="mt-12">
                             <Link href="https://docs.appactions.com">
-                                <a className="py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring bg-blue-600 hover:opacity-85 text-lg text-white hover:opacity-85 ring-blue">
+                                <a className="py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring bg-brand-green hover:opacity-85 text-lg text-white hover:opacity-85 ring-green-400">
                                     Learn more
                                 </a>
                             </Link>
                         </div>
                     </div>
-                    <div className="lg:w-1/2 grid sm:grid-cols-2 gap-10 md:gap-16 mt-20 lg:mt-0 lg:ml-40 flex-shrink-0">
+                    <div className="lg:w-4/6 grid sm:grid-cols-2 gap-10 md:gap-16 mt-20 lg:mt-0 lg:ml-20 flex-shrink-0">
                         <div>
                             <div className="gotham font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
-                                        <Heart size={32} />
+                                        <Clock size={32} />
                                     </div>
-                                    Be blazing fast
+                                    Low maintenance
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Get ~40ms response times worldwide. Get your
-                                    users the speed they deserve.
+                                    E2E tests traditionally required a lot of
+                                    maintenance. We figured out a way to
+                                    separate implementation details from the
+                                    test declaration in a better way. This
+                                    results in future-proof tests that only need
+                                    your attention when UX changes.
                                 </p>
                             </div>
                         </div>
@@ -42,13 +45,15 @@ const Features = () => (
                             <div className="gotham font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
-                                        <Heart size={32} />
+                                        <ShieldCheckered size={32} />
                                     </div>
-                                    Cache any APIs
+                                    Enhanced stability
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Add caching to any GraphQL API. Just like
-                                    you're used to with REST APIs.
+                                    Integrating with React has a serious
+                                    benefit: the test runner can make informed
+                                    decisions based on your app's state, making
+                                    significantly more stable tests.
                                 </p>
                             </div>
                         </div>
@@ -56,14 +61,14 @@ const Features = () => (
                             <div className="gotham font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
-                                        <Heart size={32} />
+                                        <ArrowSquareUpRight size={32} />
                                     </div>
-                                    Shield your API
+                                    Incremental adaptation
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Protect your API from traffic spikes and
-                                    downtime. Allow your users to rely on you,
-                                    always.
+                                    App Actions composes great with Cypress. If
+                                    you already have a Cypress codebase, gradual
+                                    migration will be a breeze.
                                 </p>
                             </div>
                         </div>
@@ -71,29 +76,12 @@ const Features = () => (
                             <div className="gotham font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
-                                        <Heart size={32} />
+                                        <Student size={32} />
                                     </div>
-                                    Lighten the load
+                                    Gentle learning curve
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Reduce your origin load by up to 95%. Handle
-                                    any traffic spike, avoid downtime and save
-                                    costs.
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="gotham font-medium">
-                                <h4 className="text-gray-700 leading-tight text-lg flex items-center">
-                                    <div className="w-8 h-8 mr-3 flex-shrink-0">
-                                        <Heart size={32} />
-                                    </div>
-                                    Operate continuously
-                                </h4>
-                                <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Resolve stability issues with auto retries
-                                    and stale-while-revalidate. Steady wins the
-                                    race.
+                                    No need to learn extensive APIs, test writing happens by an intuitive test recorder.
                                 </p>
                             </div>
                         </div>
@@ -103,34 +91,35 @@ const Features = () => (
             <article className="w-full py-10 md:py-14 lg:py-20 border-gray-500 border-opacity-10 border-b-2">
                 <div className="lg:flex">
                     <div className="flex flex-col sm:items-center lg:items-start lg:w-1/2">
-                        <Heart className="w-20 h-auto" />
+                        <Atom className="w-20 h-auto" />
                         <h3 className="gotham font-medium text-gray-700 leading-tight text-3xl sm:text-4xl  pt-10 sm:text-center lg:text-left">
-                            GraphQL Analytics
+                            Innovative features
                         </h3>
-                        <p className="gotham font-medium mx-auto sm:leading-snug text-lg md:text-2xl lg:mt-3 mt-2 lg:!text-left text-gray-700 text-opacity-60 text-left sm:text-center">
-                            Understand your API’s usage, track user behavior and
-                            change your schema with confidence.
-                        </p>
+                        {/* <p className="gotham font-medium mx-auto sm:leading-snug text-lg md:text-2xl lg:mt-3 mt-2 lg:!text-left text-gray-700 text-opacity-60 text-left sm:text-center">
+                            (...)
+                        </p> */}
                         <div className="mt-12">
                             <Link href="https://docs.appactions.com">
-                                <a className="py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring hover:opacity-85 text-lg bg-blue-400 text-white hover:opacity-85 ring-blue-400">
+                                <a className="py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring hover:opacity-85 text-lg bg-brand-green text-white hover:opacity-85 ring-green-400">
                                     Learn more
                                 </a>
                             </Link>
                         </div>
                     </div>
-                    <div className="lg:w-1/2 grid sm:grid-cols-2 gap-10 md:gap-16 mt-20 lg:mt-0 lg:ml-40 flex-shrink-0">
+                    <div className="lg:w-4/6 grid sm:grid-cols-2 gap-10 md:gap-16 mt-20 lg:mt-0 lg:ml-20 flex-shrink-0">
                         <div>
                             <div className="gotham font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
-                                        <Heart size={32} />
+                                        <ArrowsIn size={32} />
                                     </div>
-                                    Track all operations
+                                    All React renderers
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Get a real-time grip on your API’s usage.
-                                    Because knowledge is power – to improve.
+                                    In React apps, your choice of renderer is
+                                    just an implementation detail. So is in App
+                                    Actions. We support all renderers, including
+                                    react-three-fiber.
                                 </p>
                             </div>
                         </div>
@@ -138,14 +127,16 @@ const Features = () => (
                             <div className="gotham font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
-                                        <Heart size={32} />
+                                        <Article size={32} />
                                     </div>
-                                    Iterate confidently
+                                    Declarative interface
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Edit your schema based on usage data and
-                                    insights. Rely on facts and be confident in
-                                    your changes.
+                                    React is declarative, your tests should be
+                                    too. App Actions tests are using a
+                                    declarative YAML format, which makes tests
+                                    cleaner, easier to maintain and makes test
+                                    recording more powerful.
                                 </p>
                             </div>
                         </div>
@@ -153,14 +144,28 @@ const Features = () => (
                             <div className="gotham font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
-                                        <Heart size={32} />
+                                        <VideoCamera size={32} />
                                     </div>
-                                    Get deep insights
+                                    Test recording
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    See which country, page and user sent which
-                                    request. Get granular insights and always
-                                    know what's going on.
+                                    Writing tests is boring, let's record them. Thanks to our declarative interface, output is easy to read and maintain. 
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="gotham font-medium">
+                                <h4 className="text-gray-700 leading-tight text-lg flex items-center">
+                                    <div className="w-8 h-8 mr-3 flex-shrink-0">
+                                        <Code size={32} />
+                                    </div>
+                                    Result is code
+                                </h4>
+                                <p className="text-lg text-gray-700 opacity-60 pt-4">
+                                We believe test recorders shouldn't create a
+                                    walled garden, the output should be
+                                    high-quality code, that you can check into
+                                    your version control system.
                                 </p>
                             </div>
                         </div>
@@ -184,7 +189,7 @@ const Features = () => (
                             </a>
                         </div>
                     </div>
-                    <div className="lg:w-1/2 grid sm:grid-cols-2 gap-10 md:gap-16 mt-20 lg:mt-0 lg:ml-40 flex-shrink-0">
+                    <div className="lg:w-4/6 grid sm:grid-cols-2 gap-10 md:gap-16 mt-20 lg:mt-0 lg:ml-20 flex-shrink-0">
                         <div>
                             <div className="gotham font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
