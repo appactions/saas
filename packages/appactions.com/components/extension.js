@@ -22,7 +22,13 @@ const Extension = () => (
                                         strokeLinejoin="round"
                                     >
                                         <path d="M0 0h24v24H0z" stroke="none" />
-                                        <rect x={4} y={4} width={16} height={16} rx={1} />
+                                        <rect
+                                            x={4}
+                                            y={4}
+                                            width={16}
+                                            height={16}
+                                            rx={1}
+                                        />
                                         <path d="M4 8L20 8" />
                                         <path d="M8 4L8 8" />
                                     </svg>
@@ -33,9 +39,11 @@ const Extension = () => (
                                     Browser extension
                                 </h2>
                                 <p className="mt-4 text-lg text-gray-500">
-                                    Our test recording tool is just a browser extension. It appears as a new tab on the
-                                    standard DevTools window. You can record and save tests to your project folder with
-                                    a click.
+                                    Our test recording tool is just a browser
+                                    extension. It appears as a new tab on the
+                                    standard DevTools window. You can record and
+                                    save tests to your project folder with a
+                                    click.
                                 </p>
                             </div>
                         </div>
