@@ -36,7 +36,7 @@ function Header() {
                                 Getting started
                             </a>
                         </Link>
-                        <Link href="/#demo">
+                        <Link target="_blank" href="https://calendly.com/miklosme/demo-with-miklos">
                             <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
                                 Book a demo
                             </a>
