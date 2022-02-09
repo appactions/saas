@@ -2,8 +2,8 @@ import { Heart } from 'phosphor-react';
 
 const Features = () => (
     <section className="bg-white">
-        <div className="max-w-screen-2xl mx-auto xl:px-40 lg:px-32 md:px-20 sm:px-12 px-5 py-30 md:py-40 lg:py-48 xl:py-60">
-            <article className="w-full py-20 md:py-28 lg:py-40 border-gray-500 border-opacity-10 border-t-2 !pt-0 border-none">
+        <div className="max-w-screen-2xl mx-auto xl:px-40 lg:px-32 md:px-20 sm:px-12 px-5 py-10 md:py-12 lg:py-14 xl:py-18">
+            <article className="w-full py-10 md:py-14 lg:py-20 border-gray-500 border-opacity-10 border-t-2 !pt-0 border-none">
                 <div className="lg:flex">
                     <div className="flex flex-col sm:items-center lg:items-start lg:w-1/2">
                         <Heart className="w-20 h-auto" />
@@ -103,7 +103,7 @@ const Features = () => (
                     </div>
                 </div>
             </article>
-            <article className="w-full py-20 md:py-28 lg:py-40 border-gray-500 border-opacity-10 border-t-2">
+            <article className="w-full py-10 md:py-14 lg:py-20 border-gray-500 border-opacity-10 border-t-2">
                 <div className="lg:flex">
                     <div className="flex flex-col sm:items-center lg:items-start lg:w-1/2">
                         <Heart className="w-20 h-auto" />
@@ -174,7 +174,7 @@ const Features = () => (
                     </div>
                 </div>
             </article>
-            <article className="w-full py-20 md:py-28 lg:py-40 border-gray-500 border-opacity-10 border-t-2 !pb-0">
+            {/* <article className="w-full py-20 md:py-28 lg:py-40 border-gray-500 border-opacity-10 border-t-2 !pb-0">
                 <div className="lg:flex">
                     <div className="flex flex-col sm:items-center lg:items-start lg:w-1/2">
                         <Heart className="w-20 h-auto" />
@@ -260,7 +260,7 @@ const Features = () => (
                         </div>
                     </div>
                 </div>
-            </article>
+            </article> */}
         </div>
     </section>
 );
