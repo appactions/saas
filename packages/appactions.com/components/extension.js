@@ -30,7 +30,7 @@ const Extension = () => (
                             </div>
                             <div className="mt-6">
                                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                                    Just a browser extension
+                                    Browser extension
                                 </h2>
                                 <p className="mt-4 text-lg text-gray-500">
                                     Our test recording tool is just a browser extension. It appears as a new tab on the
