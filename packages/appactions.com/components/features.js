@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Heart } from 'phosphor-react';
 
 const Features = () => (
@@ -15,15 +16,11 @@ const Features = () => (
                             just in us-east-1.
                         </p>
                         <div className="mt-12">
-                            <a href="/graphql-edge-caching">
-                                <button
-                                    tabIndex={-1}
-                                    className="text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring bg-blue-600 hover:opacity-85 text-lg text-white hover:opacity-85 ring-blue"
-                                    style={{ padding: '14px 17px' }}
-                                >
+                            <Link href="https://docs.appactions.com">
+                                <a className="py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring bg-blue-600 hover:opacity-85 text-lg text-white hover:opacity-85 ring-blue">
                                     Learn more
-                                </button>
-                            </a>
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="lg:w-1/2 grid sm:grid-cols-2 gap-10 md:gap-16 mt-20 lg:mt-0 lg:ml-40 flex-shrink-0">
@@ -115,15 +112,11 @@ const Features = () => (
                             change your schema with confidence.
                         </p>
                         <div className="mt-12">
-                            <a href="/graphql-analytics">
-                                <button
-                                    tabIndex={-1}
-                                    className="text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring hover:opacity-85 text-lg bg-blue-400 text-white hover:opacity-85 ring-blue-400"
-                                    style={{ padding: '14px 17px' }}
-                                >
+                            <Link href="https://docs.appactions.com">
+                                <a className="py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring hover:opacity-85 text-lg bg-blue-400 text-white hover:opacity-85 ring-blue-400">
                                     Learn more
-                                </button>
-                            </a>
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="lg:w-1/2 grid sm:grid-cols-2 gap-10 md:gap-16 mt-20 lg:mt-0 lg:ml-40 flex-shrink-0">
@@ -186,14 +179,8 @@ const Features = () => (
                             problems in real-time.
                         </p>
                         <div className="mt-12">
-                            <a href="/graphql-performance-monitoring-error-tracking">
-                                <button
-                                    tabIndex={-1}
-                                    className="text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring hover:opacity-85 bg-red-600 text-white hover:opacity-85 ring-red text-lg"
-                                    style={{ padding: '14px 17px' }}
-                                >
-                                    Learn more
-                                </button>
+                            <a className="py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto focus:outline-none focus:ring hover:opacity-85 bg-red-600 text-white hover:opacity-85 ring-red text-lg">
+                                Learn more
                             </a>
                         </div>
                     </div>
