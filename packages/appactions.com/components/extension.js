@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 
 const Extension = () => (
     <section>
-        <div className="relative bg-white pt-32 pb-16 overflow-hidden">
+        <div className="relative bg-white pb-16 overflow-hidden">
             <div className="relative">
                 <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
-                    <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0">
+                    <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-12 lg:max-w-none lg:mx-0 lg:px-0">
                         <div>
                             <div>
                                 <span className="h-12 w-12 rounded-md flex items-center justify-center bg-brand-green text-white">

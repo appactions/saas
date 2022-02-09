@@ -9,7 +9,7 @@ import Questions from 'components/questions';
 export default function Home() {
     return (
         <>
-            <section className="mt-16 mb-32 sm:mt-24">
+            <section className="mt-16 sm:mt-24">
                 <div className="mx-auto max-w-7xl">
                     <Hero />
                     <Demo />
