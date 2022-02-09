@@ -1,9 +1,20 @@
 import Link from 'next/link';
-import { Rainbow, Clock, ShieldCheckered, ArrowSquareUpRight, Student, Atom, ArrowsIn, Article, VideoCamera, Code } from 'phosphor-react';
+import {
+    Rainbow,
+    Clock,
+    ShieldCheckered,
+    ArrowSquareUpRight,
+    Student,
+    Atom,
+    ArrowsIn,
+    Article,
+    VideoCamera,
+    Code,
+} from 'phosphor-react';
 
 const Features = () => (
     <section className="bg-white">
-        <div className="max-w-screen-2xl mx-auto xl:px-40 lg:px-32 md:px-20 sm:px-12 px-5 py-10 md:py-12 lg:py-14 xl:py-18">
+        <div className="max-w-screen-2xl mx-auto xl:px-10 lg:px-32 md:px-20 sm:px-12 px-5 py-10 md:py-12 lg:py-14 xl:py-18">
             <article className="w-full py-10 md:py-14 lg:py-20 border-gray-500 border-opacity-10 border-b-2 !pt-0">
                 <div className="lg:flex">
                     <div className="flex flex-col sm:items-center lg:items-start lg:w-1/2">
@@ -81,7 +92,9 @@ const Features = () => (
                                     Gentle learning curve
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    No need to learn extensive APIs, test writing happens by an intuitive test recorder.
+                                    No need to learn extensive APIs, test
+                                    writing happens by an intuitive test
+                                    recorder.
                                 </p>
                             </div>
                         </div>
@@ -149,7 +162,9 @@ const Features = () => (
                                     Test recording
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Writing tests is boring, let's record them. Thanks to our declarative interface, output is easy to read and maintain. 
+                                    Writing tests is boring, let's record them.
+                                    Thanks to our declarative interface, output
+                                    is easy to read and maintain.
                                 </p>
                             </div>
                         </div>
@@ -162,7 +177,7 @@ const Features = () => (
                                     Result is code
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                We believe test recorders shouldn't create a
+                                    We believe test recorders shouldn't create a
                                     walled garden, the output should be
                                     high-quality code, that you can check into
                                     your version control system.

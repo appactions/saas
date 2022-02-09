@@ -97,7 +97,7 @@ function Demo() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <div className="relative px-4">
+        <div className="relative px-4 mb-20">
             <div
                 className="lg:grid lg:grid-cols-12 lg:pr-4"
                 data-demo="container"
