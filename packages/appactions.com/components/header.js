@@ -23,7 +23,7 @@ function Header() {
                             </a>
                         </Link>
                         <Link href="https://docs.appactions.com/#getting-started">
-                            <a className="hidden sm:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
+                            <a className="hidden md:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
                                 Getting started
                             </a>
                         </Link>

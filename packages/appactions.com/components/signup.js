@@ -9,15 +9,17 @@ const STATUSES = {
 
 function SignUp({ label = 'Sign up', light }) {
     const [status, setStatus] = useState(STATUSES.INIT);
+    const [value, setValue] = useState('');
+
     const onSubmit = event => {
         event.preventDefault();
 
         setStatus(STATUSES.SUBMITTING);
 
-        fetch('/api/subscribe', {
+        fetch('api/subscribe', {
             method: 'POST',
             body: JSON.stringify({
-                email: event.target.elements.email.value,
+                email: value,
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +34,8 @@ function SignUp({ label = 'Sign up', light }) {
             })
             .catch(() => {
                 setStatus(STATUSES.ERROR);
-            });
+            })
+            .finally(() => setValue(''));
     };
 
     if (status === STATUSES.SUCCESS) {
@@ -59,12 +62,6 @@ function SignUp({ label = 'Sign up', light }) {
                         <h3 className="text-sm font-medium text-green-800">
                             Success! Thank you for your interest.
                         </h3>
-                        {/* <div className="mt-2 text-sm text-green-700">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum
-                                similique veniam.
-                            </p>
-                        </div> */}
                     </div>
                 </div>
             </div>
@@ -127,14 +124,20 @@ function SignUp({ label = 'Sign up', light }) {
                             light ? 'border-brand-green' : 'border-gray-800'
                         } w-44 sm:w-72`}
                         data-cta="cta-input"
+                        value={value}
+                        onChange={e => setValue(e.target.value)}
                     />
                     <button
                         type="submit"
-                        disabled={status === STATUSES.SUBMITTING}
+                        disabled={status === STATUSES.SUBMITTING || !value}
                         className={`inline-flex items-center px-3 py-2 font-sans text-lg font-bold tracking-wider text-white uppercase border-2 rounded-r-lg ${
                             light
                                 ? 'bg-brand-green border-brand-green'
                                 : 'bg-gray-800 border-gray-800'
+                        } ${
+                            status === STATUSES.SUBMITTING || !value
+                                ? 'cursor-auto'
+                                : 'cursor-pointer'
                         }`}
                     >
                         {label}
