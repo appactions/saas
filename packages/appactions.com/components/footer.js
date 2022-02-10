@@ -1,5 +1,4 @@
 import { Heart, TwitterLogo } from 'phosphor-react';
-import Line from './line';
 
 function Footer() {
     return (
