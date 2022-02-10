@@ -1,3 +1,4 @@
+import { ArrowRight } from 'phosphor-react';
 import { useState } from 'react';
 
 const STATUSES = {
@@ -109,53 +110,42 @@ function SignUp({ label = 'Sign up', light }) {
 
     return (
         <form onSubmit={onSubmit}>
-            <div className="flex max-w-full">
-                <label htmlFor="email" className="sr-only">
-                    Email address
-                </label>
-                <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="you@domain.com"
-                    disabled={status === STATUSES.SUBMITTING}
-                    className={`py-2 font-sans text-lg font-medium placeholder-gray-400 border-2 rounded-l-lg text-gray ${
-                        light ? 'border-brand-green' : 'border-gray-800'
-                    } w-44 sm:w-72`}
-                    data-cta="cta-input"
-                    value={value}
-                    onChange={e => setValue(e.target.value)}
-                />
-                <button
-                    type="submit"
-                    disabled={status === STATUSES.SUBMITTING || !value}
-                    className={`inline-flex items-center px-3 py-2 font-sans text-lg font-bold tracking-wider text-white uppercase border-2 rounded-r-lg ${
-                        light
-                            ? 'bg-brand-green border-brand-green'
-                            : 'bg-gray-800 border-gray-800'
-                    } ${
-                        status === STATUSES.SUBMITTING || !value
-                            ? 'cursor-auto'
-                            : 'cursor-pointer'
-                    }`}
-                >
-                    {label}
-                    <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="0 0 24 24"
-                        className="ml-2"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
+            <div className="flex flex-col w-full sm:flex-row sm:items-center">
+                <div className="w-full">
+                    <label htmlFor="email" className="sr-only">
+                        Email address
+                    </label>
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        placeholder="you@domain.com"
+                        disabled={status === STATUSES.SUBMITTING}
+                        className={`w-full block py-2 sm:w-full font-sans text-lg font-medium placeholder-gray-400 border-2 rounded-lg sm:rounded-r-none sm:rounded-l-lg text-gray ${
+                            light ? 'border-brand-green' : 'border-gray-800'
+                        }`}
+                        data-cta="cta-input"
+                        value={value}
+                        onChange={e => setValue(e.target.value)}
+                    />
+                </div>
+                <div className="mt-2 sm:mt-0">
+                    <button
+                        type="submit"
+                        disabled={status === STATUSES.SUBMITTING || !value}
+                        className={`block sm:inline w-full items-center px-3 py-2 font-sans text-lg font-bold tracking-wider text-white uppercase border-2 rounded-lg sm:rounded-l-none sm:rounded-r-lg ${
+                            light
+                                ? 'bg-brand-green border-brand-green'
+                                : 'bg-gray-800 border-gray-800'
+                        } ${
+                            status === STATUSES.SUBMITTING || !value
+                                ? 'cursor-auto'
+                                : 'cursor-pointer'
+                        } hover:opacity-80`}
                     >
-                        <g>
-                            <path fill="none" d="M0 0h24v24H0z"></path>
-                            <path d="M3 13h6v-2H3V1.846a.5.5 0 0 1 .741-.438l18.462 10.154a.5.5 0 0 1 0 .876L3.741 22.592A.5.5 0 0 1 3 22.154V13z"></path>
-                        </g>
-                    </svg>
-                </button>
+                        {label}
+                    </button>
+                </div>
             </div>
         </form>
     );

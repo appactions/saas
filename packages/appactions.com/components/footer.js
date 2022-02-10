@@ -1,4 +1,5 @@
 import { Heart, TwitterLogo } from 'phosphor-react';
+import Line from './line';
 
 function Footer() {
     return (
@@ -6,7 +7,8 @@ function Footer() {
             <h2 className="sr-only">Footer</h2>
 
             <div className="max-w-7xl mx-auto flex px-4 py-4 flex-col sm:flex-row sm:justify-around sm:px-8 sm:py-8 max-w-7xl">
-                <p>
+                <Line />
+                <p className="mt-4 sm:mt-0">
                     {' '}
                     Made in Amsterdam{' '}
                     <Heart
