@@ -14,7 +14,7 @@ const Subscribe = () => (
                     </p>
                 </div>
 
-                <div className="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 sm:flex-1">
+                <div className="w-3/4 mx-auto mt-12 sm:w-full lg:mt-0 lg:ml-8 sm:flex-1">
                     <SignUp label="Subscibe" />
                 </div>
             </div>

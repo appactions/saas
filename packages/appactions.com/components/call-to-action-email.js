@@ -13,7 +13,7 @@ const CallToActionEmail = () => (
                         features, guides, and case studies.
                     </p>
                 </div>
-                <div className="mt-12 sm:w-full sm:max-w-l lg:mt-0 lg:ml-8 sm:flex-1">
+                <div className="w-3/4 mx-auto mt-12 sm:w-full sm:max-w-l lg:mt-0 lg:ml-8 sm:flex-1">
                     <SignUp label="Subscribe" />
                 </div>
             </div>
