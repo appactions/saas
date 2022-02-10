@@ -187,6 +187,8 @@ const Features = () => (
                     </div>
                 </div>
             </article>
+
+            <hr className="hidden sm:block mt-4 h-0.5 bg-gradient-to-r from-[#CA3CFF] to-[#EC7D10]" />
         </div>
     </section>
 );

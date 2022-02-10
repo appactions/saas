@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { GlobeSimple } from 'phosphor-react';
+import Line from './line';
 
 const Extension = () => (
     <section>
@@ -7,38 +9,15 @@ const Extension = () => (
                 <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
                     <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-12 lg:max-w-none lg:mx-0 lg:px-0">
                         <div>
-                            <div>
-                                <span className="h-12 w-12 rounded-md flex items-center justify-center bg-brand-green text-white">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                        className="w-6 h-6"
-                                        height="1em"
-                                        width="1em"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        fill="transparent"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
-                                        <path d="M0 0h24v24H0z" stroke="none" />
-                                        <rect
-                                            x={4}
-                                            y={4}
-                                            width={16}
-                                            height={16}
-                                            rx={1}
-                                        />
-                                        <path d="M4 8L20 8" />
-                                        <path d="M8 4L8 8" />
-                                    </svg>
-                                </span>
-                            </div>
                             <div className="mt-6">
-                                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                                    Browser extension
-                                </h2>
-                                <p className="mt-4 text-lg text-gray-500">
+                                <div className="flex flex-row items-center sm:flex-col sm:items-baseline">
+                                    <GlobeSimple className="mr-4 w-12 sm:w-20 h-auto sm:mr-0" />{' '}
+                                    <h3 className="gotham font-medium text-gray-700 leading-tight text-3xl sm:text-4xl sm:pt-10 sm:text-center lg:text-left">
+                                        Browser extension
+                                    </h3>
+                                </div>
+                                <Line />
+                                <p className="mt-8 text-lg text-gray-500">
                                     Our test recording tool is just a browser
                                     extension. It appears as a new tab on the
                                     standard DevTools window. You can record and
