@@ -133,7 +133,14 @@ function choose(...args) {
     return args[index];
 }
 
-export default function GradientBackground({ tl, tr, bl, br, height = 800, style = {} }) {
+export default function GradientBackground({
+    tl,
+    tr,
+    bl,
+    br,
+    height = 800,
+    style = {},
+}) {
     const [gradient] = useState(() => new Gradient(height, MulticolorMaterial));
     const ref = useRef(null);
 
@@ -151,7 +158,12 @@ export default function GradientBackground({ tl, tr, bl, br, height = 800, style
         gradient.minigl.render();
     }, [ref.current]);
 
-    const values = [useMotionValue(0), useMotionValue(0), useMotionValue(0), useMotionValue(0)];
+    const values = [
+        useMotionValue(0),
+        useMotionValue(0),
+        useMotionValue(0),
+        useMotionValue(0),
+    ];
 
     useEffect(() => {
         const controls = values.map((value, index) => {
@@ -199,7 +211,14 @@ export default function GradientBackground({ tl, tr, bl, br, height = 800, style
     return (
         <canvas
             ref={ref}
-            style={{ width: '100vw', maxWidth: '100%', height, position: 'absolute', zIndex: -100, ...style }}
+            style={{
+                width: '100vw',
+                maxWidth: '100%',
+                maxHeight: '100%',
+                position: 'absolute',
+                zIndex: -100,
+                ...style,
+            }}
         />
     );
 }

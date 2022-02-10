@@ -7,7 +7,7 @@ import Questions from 'components/questions';
 import Subscribe from 'components/subscribe';
 
 const Home = () => (
-    <div className="mt-16 sm:mt-24 mx-auto max-w-7xl">
+    <div className="mt-16 sm:mt-24 max-w-full mx-auto md:max-w-7xl">
         <Hero />
         <Demo />
         <CallToActionEmail />
