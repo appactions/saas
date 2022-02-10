@@ -18,7 +18,9 @@ const animation = [
     },
     { code: '  - with: { form }####\n    do: submit####', submitted: true },
     { cursorTarget: '[data-demo="alert"]' },
-    { code: '  - with: { alert }####\n    assert: [message, toBe, Success!]####' },
+    {
+        code: '  - with: { alert }####\n    assert: [message, toBe, Success!]####',
+    },
     {},
     {},
     {},
@@ -31,7 +33,9 @@ const animation = [
             {
                 ...last,
                 ...curr,
-                code: curr.code ? [last.code, '\n', curr.code].join('').trim() : last.code,
+                code: curr.code
+                    ? [last.code, '\n', curr.code].join('').trim()
+                    : last.code,
             },
         ];
     },
@@ -54,7 +58,9 @@ function Cursor({ step }) {
     useEffect(() => {
         try {
             const parent = ref.current.parentElement.getBoundingClientRect();
-            const el = ref.current.parentElement.querySelector(cursorTarget).getBoundingClientRect();
+            const el = ref.current.parentElement
+                .querySelector(cursorTarget)
+                .getBoundingClientRect();
             setPosition({
                 left: el.left - parent.left + el.width * 0.7,
                 top: el.top - parent.top + el.height * 0.3,
@@ -62,9 +68,17 @@ function Cursor({ step }) {
         } catch (e) {}
     }, [cursorTarget]);
 
-    const style = position ? { top: position.top, left: position.left } : { display: 'none' };
+    const style = position
+        ? { top: position.top, left: position.left }
+        : { display: 'none' };
     return (
-        <svg viewBox="0 0 22 24" fill="none" className="absolute block w-8 h-8 cursor-transition" style={style} ref={ref}>
+        <svg
+            viewBox="0 0 22 24"
+            fill="none"
+            className="absolute block w-8 h-8 cursor-transition"
+            style={style}
+            ref={ref}
+        >
             <path d="M7.5 17L5 4l11 6.5-5.5 1.5-3 5z" fill="currentColor" />
             <path
                 d="M7 17.1l.26 1.28.67-1.12 2.9-4.83 5.3-1.45 1.14-.3-1.02-.61-11-6.5-.95-.56.2 1.08 2.5 13z"
@@ -83,32 +97,43 @@ function Demo() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <div className="relative lg:pr-4" data-demo="container">
-            <Cursor step={step} />
-            <div className="block mx-auto mb-8 overflow-hidden font-mono bg-gray-200 border shadow-xl pointer-events-none rounded-xl demo-window-size ">
-                <div className="flex w-full h-8 pl-2 bg-gray-300">
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-green-500 rounded-full"></span>
-                    <span className="flex-1 font-sans text-center text-gray-600 leading-8 -ml-28" data-demo="header">
-                        AwesomeReactApp
-                    </span>
+        <div className="relative px-4 mb-20">
+            <div
+                className="lg:grid lg:grid-cols-12 lg:pr-4"
+                data-demo="container"
+            >
+                <Cursor step={step} />
+                <div className="block mx-auto mb-8 overflow-hidden font-mono bg-gray-200 border shadow-xl pointer-events-none rounded-xl demo-window-size lg:col-span-6 border-transparent">
+                    <div className="flex w-full h-8 pl-2 bg-gray-300">
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-green-500 rounded-full"></span>
+                        <span
+                            className="flex-1 font-sans text-center text-gray-600 leading-8 -ml-28"
+                            data-demo="header"
+                        >
+                            Your React App
+                        </span>
+                    </div>
+                    <div className="p-4 overflow-hidden h-96">
+                        <AppMockup step={step} />
+                    </div>
                 </div>
-                <div className="p-4 overflow-hidden h-96">
-                    <AppMockup step={step} />
-                </div>
-            </div>
-            <div className="block mx-auto overflow-hidden font-mono bg-gray-800 border shadow-xl rounded-xl demo-window-size sm:mx-auto">
-                <div className="flex w-full h-8 pl-2 bg-gray-700">
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
-                    <span className="inline-block w-4 h-4 my-2 ml-2 bg-green-500 rounded-full"></span>
-                    <span className="flex-1 font-sans text-center text-gray-300 leading-8 -ml-28">
-                        submit-page.yml — IDE
-                    </span>
-                </div>
-                <div className="py-2 overflow-hidden text-left text-gray-200 pl-14 h-96 dark-scrollbar" data-demo="code">
-                    <TestCode step={step} />
+                <div className="block mx-auto overflow-hidden font-mono bg-gray-800 border shadow-xl rounded-xl demo-window-size sm:mx-auto lg:col-span-6 border-transparent">
+                    <div className="flex w-full h-8 pl-2 bg-gray-700">
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
+                        <span className="inline-block w-4 h-4 my-2 ml-2 bg-green-500 rounded-full"></span>
+                        <span className="flex-1 font-sans text-center text-gray-300 leading-8 -ml-28">
+                            submit-page.yml — IDE
+                        </span>
+                    </div>
+                    <div
+                        className="py-2 overflow-hidden text-left text-gray-200 pl-14 h-96 dark-scrollbar"
+                        data-demo="code"
+                    >
+                        <TestCode step={step} />
+                    </div>
                 </div>
             </div>
         </div>
@@ -171,27 +196,39 @@ function AppMockup({ step }) {
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                     <div className="grid grid-cols-3 gap-6">
                         <div className="col-span-3 sm:col-span-2">
-                            <label htmlFor="company_website" className="block text-sm font-medium text-gray-700">
+                            <label
+                                htmlFor="company_website"
+                                className="block text-sm font-medium text-gray-700"
+                            >
                                 Website
                             </label>
                             <div className="flex mt-1 rounded-md shadow-sm">
-                                <TypingInput value={state.input} key={state.input} />
+                                <TypingInput
+                                    value={state.input}
+                                    key={state.input}
+                                />
                             </div>
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="about" className="block text-sm font-medium text-gray-700">
+                        <label
+                            htmlFor="about"
+                            className="block text-sm font-medium text-gray-700"
+                        >
                             Description
                         </label>
                         <div className="mt-1">
-                            <TypingTextarea key={state.textarea} value={state.textarea} />
+                            <TypingTextarea
+                                key={state.textarea}
+                                value={state.textarea}
+                            />
                         </div>
                     </div>
                 </div>
                 <div className="px-4 py-3 text-right bg-gray-50 sm:px-6">
                     <button
                         type="submit"
-                        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent shadow-sm rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-[#FF809D] border border-transparent shadow-sm rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
                         data-demo="submit"
                     >
                         Submit
@@ -219,7 +256,9 @@ function AppMockup({ step }) {
                     </svg>
                 </div>
                 <div className="ml-3">
-                    <p className="text-sm font-medium text-green-800">Success!</p>
+                    <p className="text-sm font-medium text-green-800">
+                        Success!
+                    </p>
                 </div>
             </div>
         </div>
@@ -241,7 +280,11 @@ function TypingLine({ line }) {
 
         let i = 0;
         let interval = setInterval(() => {
-            if (i < typeof substringToType === 'string' ? substringToType.length : line.length) {
+            if (
+                i < typeof substringToType === 'string'
+                    ? substringToType.length
+                    : line.length
+            ) {
                 setPos(++i);
             } else {
                 clearInterval(interval);

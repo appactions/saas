@@ -3,40 +3,35 @@ import Link from 'next/link';
 
 function Header() {
     return (
-        <div className="relative bg-white">
+        <div className="relative">
             <div className="px-4 mx-auto max-w-7xl sm:px-6">
                 <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
-                    <div className="flex justify-start lg:w-0 lg:flex-1">
+                    <div className="flex-1 justify-start lg:w-0 lg:flex-1">
                         <Link href="/">
-                            <a className="block p-2 w-52 text-brand-green">
-                                <span className="sr-only">Workflow</span>
-                                <Logo />
+                            <a className="text-xl font-medium block p-2 w-52 text-white opacity-80">
+                                <span className="inline-block w-9 h-6 align-middle mr-2">
+                                    <Logo />
+                                </span>
+                                App Actions
                             </a>
                         </Link>
                     </div>
-                    {/* <div className="-my-2 -mr-2 md:hidden">
-                        <button
-                            type="button"
-                            className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
-                            aria-expanded="false"
+                    <nav className="flex space-x-10">
+                        <Link href="https://docs.appactions.com/">
+                            <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white" target="_blank" rel="noopener noreferrer">
+                                Docs
+                            </a>
+                        </Link>
+                        <Link href="https://docs.appactions.com/#getting-started">
+                            <a className="hidden md:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white" target="_blank" rel="noopener noreferrer">
+                                Getting started
+                            </a>
+                        </Link>
+                        <Link
+                            href="https://calendly.com/miklosme/demo-with-miklos"
                         >
-                            <span className="sr-only">Open menu</span>
-                        </button>
-                    </div> */}
-                    <nav className="hidden lg:flex space-x-10">
-                        <Link href="/#what">
-                            <a className="text-xl font-medium text-gray-500 border-b-4 border-transparent hover:text-brand-green hover:border-brand-green">
-                                What
-                            </a>
-                        </Link>
-                        <Link href="/#how">
-                            <a className="text-xl font-medium text-gray-500 border-b-4 border-transparent hover:text-brand-green hover:border-brand-green">
-                                How
-                            </a>
-                        </Link>
-                        <Link href="/#about">
-                            <a className="text-xl font-medium text-gray-500 border-b-4 border-transparent hover:text-brand-green hover:border-brand-green">
-                                About
+                            <a className="hidden sm:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white" target="_blank" rel="noopener noreferrer">
+                                Book a demo
                             </a>
                         </Link>
                     </nav>

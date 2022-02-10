@@ -1,3 +1,4 @@
+import { ArrowRight } from 'phosphor-react';
 import { useState } from 'react';
 
 const STATUSES = {
@@ -9,15 +10,17 @@ const STATUSES = {
 
 function SignUp({ label = 'Sign up', light }) {
     const [status, setStatus] = useState(STATUSES.INIT);
+    const [value, setValue] = useState('');
+
     const onSubmit = event => {
         event.preventDefault();
 
         setStatus(STATUSES.SUBMITTING);
 
-        fetch('/api/subscribe', {
+        fetch('api/subscribe', {
             method: 'POST',
             body: JSON.stringify({
-                email: event.target.elements.email.value,
+                email: value,
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +35,8 @@ function SignUp({ label = 'Sign up', light }) {
             })
             .catch(() => {
                 setStatus(STATUSES.ERROR);
-            });
+            })
+            .finally(() => setValue(''));
     };
 
     if (status === STATUSES.SUCCESS) {
@@ -56,13 +60,9 @@ function SignUp({ label = 'Sign up', light }) {
                         </svg>
                     </div>
                     <div className="ml-3">
-                        <h3 className="text-sm font-medium text-green-800">Success! Thank you for your interest.</h3>
-                        {/* <div className="mt-2 text-sm text-green-700">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum
-                                similique veniam.
-                            </p>
-                        </div> */}
+                        <h3 className="text-sm font-medium text-green-800">
+                            Success! Thank you for your interest.
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,9 @@ function SignUp({ label = 'Sign up', light }) {
                         </svg>
                     </div>
                     <div className="ml-3">
-                        <h3 className="text-sm font-medium text-red-800">Something went wrong.</h3>
+                        <h3 className="text-sm font-medium text-red-800">
+                            Something went wrong.
+                        </h3>
                         <button
                             className="mt-2 text-sm text-red-700 underline"
                             onClick={event => {
@@ -107,9 +109,9 @@ function SignUp({ label = 'Sign up', light }) {
     }
 
     return (
-        <form onSubmit={onSubmit} className="sm:max-w-xl sm:mx-auto lg:mx-0">
-            <div className="sm:flex">
-                <div className="flex-1 min-w-0">
+        <form onSubmit={onSubmit}>
+            <div className="flex flex-col w-full sm:flex-row sm:items-center">
+                <div className="w-full">
                     <label htmlFor="email" className="sr-only">
                         Email address
                     </label>
@@ -117,36 +119,31 @@ function SignUp({ label = 'Sign up', light }) {
                         id="email"
                         type="email"
                         name="email"
-                        placeholder="Enter your email"
+                        placeholder="you@domain.com"
                         disabled={status === STATUSES.SUBMITTING}
-                        className={`py-2 font-sans text-lg font-medium placeholder-gray-400 border-2 rounded-l-lg text-gray ${
+                        className={`w-full block py-2 sm:w-full font-sans text-lg font-medium placeholder-gray-400 border-2 rounded-lg sm:rounded-r-none sm:rounded-l-lg text-gray ${
                             light ? 'border-brand-green' : 'border-gray-800'
-                        } w-44 sm:w-72`}
+                        }`}
                         data-cta="cta-input"
+                        value={value}
+                        onChange={e => setValue(e.target.value)}
                     />
+                </div>
+                <div className="mt-2 sm:mt-0">
                     <button
                         type="submit"
-                        disabled={status === STATUSES.SUBMITTING}
-                        className={`inline-flex items-center px-3 py-2 font-sans text-lg font-bold tracking-wider text-white uppercase border-2 rounded-r-lg ${
-                            light ? 'bg-brand-green border-brand-green' : 'bg-gray-800 border-gray-800'
-                        }`}
+                        disabled={status === STATUSES.SUBMITTING || !value}
+                        className={`block sm:inline w-full items-center px-3 py-2 font-sans text-lg font-bold tracking-wider text-white uppercase border-2 rounded-lg sm:rounded-l-none sm:rounded-r-lg ${
+                            light
+                                ? 'bg-brand-green border-brand-green'
+                                : 'bg-gray-800 border-gray-800'
+                        } ${
+                            status === STATUSES.SUBMITTING || !value
+                                ? 'cursor-auto'
+                                : 'cursor-pointer'
+                        } hover:opacity-80`}
                     >
                         {label}
-                        <svg
-                            stroke="currentColor"
-                            fill="currentColor"
-                            strokeWidth="0"
-                            viewBox="0 0 24 24"
-                            className="ml-2"
-                            height="1em"
-                            width="1em"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <g>
-                                <path fill="none" d="M0 0h24v24H0z"></path>
-                                <path d="M3 13h6v-2H3V1.846a.5.5 0 0 1 .741-.438l18.462 10.154a.5.5 0 0 1 0 .876L3.741 22.592A.5.5 0 0 1 3 22.154V13z"></path>
-                            </g>
-                        </svg>
                     </button>
                 </div>
             </div>
