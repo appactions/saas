@@ -32,7 +32,7 @@ const Extension = () => (
                             <motion.img
                                 initial={{ opacity: 0, x: 40 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, amount: 0.8 }}
+                                viewport={{ once: true }}
                                 transition={{ duration: 0.5, ease: 'easeOut' }}
                                 className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                                 src="/img/browser-extension.png"

@@ -18,20 +18,19 @@ function Header() {
                     </div>
                     <nav className="flex space-x-10">
                         <Link href="https://docs.appactions.com/">
-                            <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
+                            <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white" target="_blank" rel="noopener noreferrer">
                                 Docs
                             </a>
                         </Link>
                         <Link href="https://docs.appactions.com/#getting-started">
-                            <a className="hidden md:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
+                            <a className="hidden md:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white" target="_blank" rel="noopener noreferrer">
                                 Getting started
                             </a>
                         </Link>
                         <Link
-                            target="_blank"
                             href="https://calendly.com/miklosme/demo-with-miklos"
                         >
-                            <a className="hidden sm:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white">
+                            <a className="hidden sm:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white" target="_blank" rel="noopener noreferrer">
                                 Book a demo
                             </a>
                         </Link>

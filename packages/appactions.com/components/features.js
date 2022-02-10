@@ -24,6 +24,7 @@ const Features = () => (
                             <Rainbow className="mr-4 w-12 sm:w-20 h-auto sm:mr-0" />
                         }
                         title="Built for developers"
+                        ctaHref="https://docs.appactions.com/#for-developers"
                     />
 
                     <div className="mt-6 lg:w-4/6 grid sm:grid-cols-2 gap-10 md:gap-16 sm:mt-20 lg:mt-0 lg:ml-20 flex-shrink-0">
@@ -92,7 +93,7 @@ const Features = () => (
                             </div>
                         </div>
                         <div className="mt-2 sm:mt-12">
-                            <Link href="https://docs.appactions.com">
+                            <Link href="https://docs.appactions.com/#for-developers">
                                 <a className="sm:hidden py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 inline-flex items-center sm:w-auto focus:outline-none focus:ring bg-brand-green text-lg text-white ring-green-400 hover:opacity-80">
                                     Learn more <CaretRight className="ml-2" />
                                 </a>
@@ -103,7 +104,7 @@ const Features = () => (
             </article>
 
             <hr className="hidden sm:block mt-4 h-0.5 bg-gradient-to-r from-[#CA3CFF] to-[#EC7D10]" />
-
+            
             <article className="w-full mt-20 sm:mt-40">
                 <div className="lg:flex">
                     <FeatureHeader
@@ -111,6 +112,7 @@ const Features = () => (
                             <Atom className="mr-4 w-12 sm:w-20 h-auto sm:mr-0" />
                         }
                         title="Innovative features"
+                        ctaHref="https://docs.appactions.com/#innovation"
                     />
                     <div className="mt-6 lg:w-4/6 grid sm:grid-cols-2 gap-10 md:gap-16 sm:mt-20 lg:mt-0 lg:ml-20 flex-shrink-0">
                         <div>
@@ -178,7 +180,7 @@ const Features = () => (
                             </div>
                         </div>
                         <div className="mt-2 sm:mt-12">
-                            <Link href="https://docs.appactions.com">
+                            <Link href="https://docs.appactions.com/#innovation">
                                 <a className="sm:hidden py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 inline-flex items-center sm:w-auto focus:outline-none focus:ring bg-brand-green hover:opacity-85 text-lg text-white hover:opacity-85 ring-green-400">
                                     Learn more <CaretRight className="ml-2" />
                                 </a>
