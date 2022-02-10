@@ -1,18 +1,6 @@
 import { docs } from 'misc/constants';
 import Link from 'next/link';
-import {
-    ArrowSquareUpRight,
-    ArrowsIn,
-    Article,
-    Atom,
-    CaretRight,
-    Clock,
-    Code,
-    Rainbow,
-    ShieldCheckered,
-    Student,
-    VideoCamera,
-} from 'phosphor-react';
+import { CaretRight } from 'phosphor-react';
 
 const FeatureHeader = ({ icon, title }) => (
     <div className="flex flex-col sm:items-center lg:items-start lg:w-1/2">
@@ -27,7 +15,7 @@ const FeatureHeader = ({ icon, title }) => (
 
         <div className="mt-4 sm:mt-12">
             <Link href={docs}>
-                <a className="hidden sm:block py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 inline-flex items-center sm:w-auto focus:outline-none focus:ring bg-brand-green hover:opacity-85 text-lg text-white hover:opacity-85 ring-green-400">
+                <a className="hidden sm:block py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 inline-flex items-center sm:w-auto focus:outline-none focus:ring bg-brand-green text-lg text-white ring-green-400 hover:opacity-80">
                     Learn more <CaretRight className="ml-2 inline" />
                 </a>
             </Link>

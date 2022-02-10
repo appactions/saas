@@ -228,7 +228,7 @@ function AppMockup({ step }) {
                 <div className="px-4 py-3 text-right bg-gray-50 sm:px-6">
                     <button
                         type="submit"
-                        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent shadow-sm rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-[#FF809D] border border-transparent shadow-sm rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
                         data-demo="submit"
                     >
                         Submit
