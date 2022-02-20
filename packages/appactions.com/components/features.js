@@ -93,11 +93,11 @@ const Features = () => (
                             </div>
                         </div>
                         <div className="mt-2 sm:mt-12">
-                            <Link href="https://docs.appactions.com/#for-developers">
+                            {/* <Link href="https://docs.appactions.com/#for-developers">
                                 <a className="sm:hidden py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 inline-flex items-center sm:w-auto focus:outline-none focus:ring bg-brand-green text-lg text-white ring-green-400 hover:opacity-80">
                                     Learn more <CaretRight className="ml-2" />
                                 </a>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>
@@ -180,11 +180,11 @@ const Features = () => (
                             </div>
                         </div>
                         <div className="mt-2 sm:mt-12">
-                            <Link href="https://docs.appactions.com/#innovation">
+                            {/* <Link href="https://docs.appactions.com/#innovation">
                                 <a className="sm:hidden py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 gotham rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 inline-flex items-center sm:w-auto focus:outline-none focus:ring bg-brand-green hover:opacity-85 text-lg text-white hover:opacity-85 ring-green-400">
                                     Learn more <CaretRight className="ml-2" />
                                 </a>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>
