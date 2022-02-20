@@ -4,9 +4,9 @@ import { CaretRight } from 'phosphor-react';
 
 const FeatureHeader = ({ icon, title, ctaHref }) => (
     <div className="flex flex-col sm:items-center lg:items-start lg:w-1/2">
-        <div className="flex flex-row items-center sm:flex-col  lg:items-baseline">
+        <div className="flex flex-row items-center sm:flex-col text-gray-800 lg:items-baseline">
             {icon}
-            <h3 className="gotham font-medium text-gray-700 leading-tight text-3xl sm:text-4xl sm:pt-10 sm:text-center lg:text-left">
+            <h3 className="gotham font-medium leading-tight text-3xl sm:text-4xl sm:pt-10 sm:text-center lg:text-left">
                 {title}
             </h3>
         </div>
