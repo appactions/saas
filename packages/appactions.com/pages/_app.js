@@ -5,8 +5,8 @@ import mixpanel from 'mixpanel-browser';
 import GradientBackground from 'components/gradient-background-5';
 import './style.css';
 
-mixpanel.init(process.env.MIXPANEL_TOKEN, {
-    debug: process.env.VERCEL_ENV === 'development',
+mixpanel.init('232eac1a8b458a5743596e54316177f8', {
+    debug: process.env.NODE_ENV === 'development',
 });
 
 function MyApp({ Component, pageProps }) {
