@@ -1,4 +1,4 @@
-import { ArrowRight } from 'phosphor-react';
+import mixpanel from 'mixpanel-browser';
 import { useState } from 'react';
 
 const STATUSES = {
@@ -28,12 +28,15 @@ function SignUp({ label = 'Sign up', light }) {
         })
             .then(res => {
                 if (res.ok) {
+                    mixpanel.track('Subscribed');
                     setStatus(STATUSES.SUCCESS);
                 } else {
+                    mixpanel.track('Error with subscribe');
                     setStatus(STATUSES.ERROR);
                 }
             })
             .catch(() => {
+                mixpanel.track('Error with subscribe');
                 setStatus(STATUSES.ERROR);
             })
             .finally(() => setValue(''));
@@ -97,6 +100,8 @@ function SignUp({ label = 'Sign up', light }) {
                             className="mt-2 text-sm text-red-700 underline"
                             onClick={event => {
                                 event.preventDefault();
+
+                                mixpanel.track('Retries subscription');
                                 setStatus(STATUSES.INIT);
                             }}
                         >

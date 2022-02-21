@@ -10,9 +10,9 @@ const Extension = () => (
                     <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-12 lg:max-w-none lg:mx-0 lg:px-0">
                         <div>
                             <div className="mt-6">
-                                <div className="flex flex-row items-center sm:flex-col sm:items-baseline">
+                                <div className="flex flex-row items-center sm:flex-col sm:items-baseline text-gray-800">
                                     <GlobeSimple className="mr-4 w-12 sm:w-20 h-auto sm:mr-0" />{' '}
-                                    <h3 className="gotham font-medium text-gray-700 leading-tight text-3xl sm:text-4xl sm:pt-10 sm:text-center lg:text-left">
+                                    <h3 className="font-medium leading-tight text-3xl sm:text-4xl sm:pt-10 sm:text-center lg:text-left">
                                         Browser extension
                                     </h3>
                                 </div>

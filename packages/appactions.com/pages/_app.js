@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import Header from 'components/header';
 import Footer from 'components/footer';
+import mixpanel from 'mixpanel-browser';
 import GradientBackground from 'components/gradient-background-5';
-
 import './style.css';
+
+mixpanel.init(process.env.MIXPANEL_TOKEN, {
+    debug: process.env.VERCEL_ENV === 'development',
+});
 
 function MyApp({ Component, pageProps }) {
     return (

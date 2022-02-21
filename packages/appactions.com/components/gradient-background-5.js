@@ -170,7 +170,7 @@ export default function GradientBackground({
             function anim(value, goal, index) {
                 return animate(value, goal, {
                     duration: choose(3, 4, 5, 6),
-                    delay: choose(6, 7, 8, 9),
+                    delay: choose(3, 4, 5, 6),
                     onComplete() {
                         anim(value, goal === 100 ? 0 : 100, index);
                     },
