@@ -27,10 +27,11 @@ const Questions = () => (
                 variants={container}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1 }}
             >
                 {faqs.map((faq, index) => (
-                    <motion.li
+                    <motion.div
                         variants={item}
                         key={index}
                         className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8"
@@ -43,7 +44,7 @@ const Questions = () => (
                                 {faq.answer}
                             </p>
                         </dd>
-                    </motion.li>
+                    </motion.div>
                 ))}
             </motion.dl>
         </div>
