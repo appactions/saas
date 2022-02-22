@@ -1,5 +1,11 @@
+import { motion } from 'framer-motion';
+
 const Hero = () => (
-    <section>
+    <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+    >
         <div className="px-8 text-center">
             <h1 className="text-4xl font-extrabold tracking-tight sm:leading-none lg:text-5xl xl:text-6xl text-white opacity-80">
                 Effortless React testing
@@ -13,7 +19,7 @@ const Hero = () => (
                 <span className="whitespace-nowrap">react-three-fiber.</span>
             </p>
         </div>
-    </section>
+    </motion.section>
 );
 
 export default Hero;

@@ -1,4 +1,20 @@
 import { faqs } from 'misc/faq';
+import { motion } from 'framer-motion';
+
+const container = {
+    // hidden: { opacity: 0 },
+    show: {
+        // opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+};
+
+const item = {
+    hidden: { opacity: 0, x: 20 },
+    show: { opacity: 1, x: 0 },
+};
 
 const Questions = () => (
     <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
@@ -6,9 +22,16 @@ const Questions = () => (
             Frequently asked questions
         </h2>
         <div className="mt-8">
-            <dl className="divide-y divide-gray-200">
+            <motion.dl
+                className="divide-y divide-gray-200"
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.5 }}
+            >
                 {faqs.map((faq, index) => (
-                    <div
+                    <motion.li
+                        variants={item}
                         key={index}
                         className="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8"
                     >
@@ -20,9 +43,9 @@ const Questions = () => (
                                 {faq.answer}
                             </p>
                         </dd>
-                    </div>
+                    </motion.li>
                 ))}
-            </dl>
+            </motion.dl>
         </div>
     </section>
 );

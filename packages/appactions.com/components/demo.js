@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 // the /##(.*)##/ thing means that part will be "typed in the animation"
 // #### at the end indicates the whole line should appear instantly
@@ -49,6 +50,8 @@ const animation = [
         },
     ],
 );
+
+const transition = { delay: 0.2 };
 
 function Cursor({ step }) {
     const { cursorTarget } = animation[step];
@@ -103,7 +106,13 @@ function Demo() {
                 data-demo="container"
             >
                 <Cursor step={step} />
-                <div className="block mx-auto mb-8 overflow-hidden font-mono bg-gray-200 border shadow-xl pointer-events-none rounded-xl demo-window-size lg:col-span-6 border-transparent">
+                <motion.div
+                    className="block mx-auto mb-8 overflow-hidden font-mono bg-gray-200 border shadow-xl pointer-events-none rounded-xl demo-window-size lg:col-span-6 border-transparent"
+                    initial={{ x: 200 }}
+                    whileInView={{ x: 0 }}
+                    viewport={{ once: true }}
+                    transition={transition}
+                >
                     <div className="flex w-full h-8 pl-2 bg-gray-300">
                         <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
                         <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
@@ -118,8 +127,14 @@ function Demo() {
                     <div className="p-4 overflow-hidden h-96">
                         <AppMockup step={step} />
                     </div>
-                </div>
-                <div className="block mx-auto overflow-hidden font-mono bg-gray-800 border shadow-xl rounded-xl demo-window-size sm:mx-auto lg:col-span-6 border-transparent">
+                </motion.div>
+                <motion.div
+                    className="block mx-auto overflow-hidden font-mono bg-gray-800 border shadow-xl rounded-xl demo-window-size sm:mx-auto lg:col-span-6 border-transparent"
+                    initial={{ x: -200 }}
+                    whileInView={{ x: 0 }}
+                    viewport={{ once: true }}
+                    transition={transition}
+                >
                     <div className="flex w-full h-8 pl-2 bg-gray-700">
                         <span className="inline-block w-4 h-4 my-2 ml-2 bg-red-400 rounded-full"></span>
                         <span className="inline-block w-4 h-4 my-2 ml-2 bg-yellow-300 rounded-full"></span>
@@ -134,7 +149,7 @@ function Demo() {
                     >
                         <TestCode step={step} />
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

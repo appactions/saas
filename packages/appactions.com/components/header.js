@@ -1,9 +1,15 @@
 import Logo from 'components/logo';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 function Header() {
     return (
-        <div className="relative">
+        <motion.div
+            className="relative"
+            initial={{ opacity: 0, y: -40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+        >
             <div className="px-4 mx-auto max-w-7xl sm:px-6">
                 <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
                     <div className="flex-1 justify-start lg:w-0 lg:flex-1">
@@ -18,26 +24,36 @@ function Header() {
                     </div>
                     <nav className="flex space-x-10">
                         <Link href="https://docs.appactions.com/">
-                            <a className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white" target="_blank" rel="noopener noreferrer">
+                            <a
+                                className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Docs
                             </a>
                         </Link>
                         <Link href="https://docs.appactions.com/#getting-started">
-                            <a className="hidden md:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white" target="_blank" rel="noopener noreferrer">
+                            <a
+                                className="hidden md:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Getting started
                             </a>
                         </Link>
-                        <Link
-                            href="https://calendly.com/miklosme/demo-with-miklos"
-                        >
-                            <a className="hidden sm:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white" target="_blank" rel="noopener noreferrer">
+                        <Link href="https://calendly.com/miklosme/demo-with-miklos">
+                            <a
+                                className="hidden sm:block text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Book a demo
                             </a>
                         </Link>
                     </nav>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
