@@ -13,6 +13,22 @@ import {
     VideoCamera,
 } from 'phosphor-react';
 import FeatureHeader from './feature-header';
+import { motion } from 'framer-motion';
+
+const container = {
+    // hidden: { opacity: 0 },
+    show: {
+        // opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+};
 
 const Features = () => (
     <section className="bg-white">
@@ -26,8 +42,14 @@ const Features = () => (
                         title="Built for developers"
                         ctaHref="https://docs.appactions.com/#innovation"
                     />
-                    <div className="mt-6 lg:w-4/6 grid sm:grid-cols-2 gap-10 md:gap-16 sm:mt-20 lg:mt-0 lg:ml-20 flex-shrink-0">
-                        <div>
+                    <motion.div
+                        className="mt-6 lg:w-4/6 grid sm:grid-cols-2 gap-10 md:gap-16 sm:mt-20 lg:mt-0 lg:ml-20 flex-shrink-0"
+                        variants={container}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                    >
+                        <motion.div variants={item}>
                             <div className="font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
@@ -42,8 +64,8 @@ const Features = () => (
                                     react-three-fiber.
                                 </p>
                             </div>
-                        </div>
-                        <div>
+                        </motion.div>
+                        <motion.div variants={item}>
                             <div className="font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
@@ -59,9 +81,9 @@ const Features = () => (
                                     recording more powerful.
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div>
+                        <motion.div variants={item}>
                             <div className="font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
@@ -78,8 +100,8 @@ const Features = () => (
                                     your attention when UX changes.
                                 </p>
                             </div>
-                        </div>
-                        <div>
+                        </motion.div>
+                        <motion.div variants={item}>
                             <div className="font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
@@ -94,7 +116,7 @@ const Features = () => (
                                     your version control system.
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                         <div className="mt-2 sm:mt-12">
                             {/* <Link href="https://docs.appactions.com/#innovation">
                                 <a className="sm:hidden py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 inline-flex items-center sm:w-auto focus:outline-none focus:ring bg-brand-green hover:opacity-85 text-lg text-white hover:opacity-85 ring-green-400">
@@ -102,7 +124,7 @@ const Features = () => (
                                 </a>
                             </Link> */}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </article>
 
@@ -118,8 +140,14 @@ const Features = () => (
                         ctaHref="https://docs.appactions.com/#for-developers"
                     />
 
-                    <div className="mt-6 lg:w-4/6 grid sm:grid-cols-2 gap-10 md:gap-16 sm:mt-20 lg:mt-0 lg:ml-20 flex-shrink-0">
-                        <div>
+                    <motion.div
+                        className="mt-6 lg:w-4/6 grid sm:grid-cols-2 gap-10 md:gap-16 sm:mt-20 lg:mt-0 lg:ml-20 flex-shrink-0"
+                        variants={container}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                    >
+                        <motion.div variants={item}>
                             <div className="font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
@@ -133,8 +161,8 @@ const Features = () => (
                                     is easy to read and maintain.
                                 </p>
                             </div>
-                        </div>
-                        <div>
+                        </motion.div>
+                        <motion.div variants={item}>
                             <div className="font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
@@ -149,8 +177,8 @@ const Features = () => (
                                     significantly more stable tests.
                                 </p>
                             </div>
-                        </div>
-                        <div>
+                        </motion.div>
+                        <motion.div variants={item}>
                             <div className="font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
@@ -164,8 +192,8 @@ const Features = () => (
                                     migration will be a breeze.
                                 </p>
                             </div>
-                        </div>
-                        <div>
+                        </motion.div>
+                        <motion.div variants={item}>
                             <div className="font-medium">
                                 <h4 className="text-gray-700 leading-tight text-lg flex items-center">
                                     <div className="w-8 h-8 mr-3 flex-shrink-0">
@@ -179,7 +207,7 @@ const Features = () => (
                                     recorder.
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                         <div className="mt-2 sm:mt-12">
                             {/* <Link href="https://docs.appactions.com/#for-developers">
                                 <a className="sm:hidden py-3 px-4 text-center whitespace-nowrap flex items-center font-medium leading-6 rounded-md transition duration-150 ease-in-out sm:flex-shrink-0 inline-flex items-center sm:w-auto focus:outline-none focus:ring bg-brand-green text-lg text-white ring-green-400 hover:opacity-80">
@@ -187,7 +215,7 @@ const Features = () => (
                                 </a>
                             </Link> */}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </article>
 

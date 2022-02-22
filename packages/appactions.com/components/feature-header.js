@@ -1,9 +1,15 @@
 import { docs } from 'misc/constants';
 import Link from 'next/link';
 import { CaretRight } from 'phosphor-react';
+import { motion } from 'framer-motion';
 
 const FeatureHeader = ({ icon, title, ctaHref }) => (
-    <div className="flex flex-col sm:items-center lg:items-start lg:w-1/2">
+    <motion.div
+        className="flex flex-col sm:items-center lg:items-start lg:w-1/2"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+    >
         <div className="flex flex-row items-center sm:flex-col text-gray-800 lg:items-baseline">
             {icon}
             <h3 className="font-medium leading-tight text-3xl sm:text-4xl sm:pt-10 sm:text-center lg:text-left">
@@ -20,7 +26,7 @@ const FeatureHeader = ({ icon, title, ctaHref }) => (
                 </a>
             </Link> */}
         </div>
-    </div>
+    </motion.div>
 );
 
 export default FeatureHeader;
