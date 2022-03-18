@@ -15,6 +15,26 @@ function MyApp({ Component, pageProps }) {
             <Head>
                 <title>App Actions</title>
                 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+                {/* Essential META Tags */}
+                <meta property="og:title" content="App Actions — Effortless React testing" />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://appactions.com/thumbnail.png" />
+                <meta property="og:url" content="https://appactions.com/" />
+                <meta name="twitter:card" content="summary_large_image" />
+
+                {/* Non-Essential, But Recommended */}
+                <meta
+                    property="og:description"
+                    content="App Actions is a next generation testing tool for React: declarative interface, low maintenance, test recording, enhanced stability, incremental adaptation. Supports all React renderers, including react-three-fiber."
+                />
+                <meta property="og:site_name" content="App Actions" />
+                <meta name="twitter:image:alt" content="Effortless React testing" />
+
+                {/* Non-Essential, But Required for Analytics
+                <meta property="fb:app_id" content="your_app_id" />
+                <meta name="twitter:site" content="@website-username" /> */}
+
                 {/* Hotjar Tracking Code for react-app-actions.com */}
                 <script
                     dangerouslySetInnerHTML={{
