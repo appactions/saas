@@ -21,15 +21,20 @@ function MyApp({ Component, pageProps }) {
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://appactions.com/thumbnail.png" />
                 <meta property="og:url" content="https://appactions.com/" />
-                <meta name="twitter:card" content="summary_large_image" />
-
-                {/* Non-Essential, But Recommended */}
                 <meta
                     property="og:description"
                     content="App Actions is a next generation testing tool for React: declarative interface, low maintenance, test recording, enhanced stability, incremental adaptation. Supports all React renderers, including react-three-fiber."
                 />
                 <meta property="og:site_name" content="App Actions" />
+
+                <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:image:alt" content="Effortless React testing" />
+                <meta name="twitter:title" content="App Actions — Effortless React testing" />
+                <meta
+                    name="twitter:description"
+                    content="App Actions is a next generation testing tool for React: declarative interface, low maintenance, test recording, enhanced stability, incremental adaptation. Supports all React renderers, including react-three-fiber."
+                />
+                <meta name="twitter:image" content="https://appactions.com/thumbnail.png" />
 
                 {/* Non-Essential, But Required for Analytics
                 <meta property="fb:app_id" content="your_app_id" />
