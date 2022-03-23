@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
                 <meta property="og:url" content="https://appactions.com/" />
                 <meta
                     property="og:description"
-                    content="App Actions is a next generation testing tool for React: declarative interface, low maintenance, test recording, enhanced stability, incremental adaptation. Supports all React renderers, including react-three-fiber."
+                    content="App Actions is a next-generation testing tool for React: declarative interface, low maintenance, test recording, enhanced stability, incremental adaptation. Supports all React renderers, including react-three-fiber."
                 />
                 <meta property="og:site_name" content="App Actions" />
 
@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
                 <meta name="twitter:title" content="App Actions — Effortless React testing" />
                 <meta
                     name="twitter:description"
-                    content="App Actions is a next generation testing tool for React: declarative interface, low maintenance, test recording, enhanced stability, incremental adaptation. Supports all React renderers, including react-three-fiber."
+                    content="App Actions is a next-generation testing tool for React: declarative interface, low maintenance, test recording, enhanced stability, incremental adaptation. Supports all React renderers, including react-three-fiber."
                 />
                 <meta name="twitter:image" content="https://appactions.com/thumbnail.png" />
 

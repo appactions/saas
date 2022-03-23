@@ -9,7 +9,7 @@ const CallToActionEmail = () => (
                         Want to be an early adopter?
                     </h2>
                     <p className="max-w-3xl mt-4 text-lg">
-                        Join the App Actions newsletter to hear first about new
+                        Join the App Actions newsletter to learn about new
                         features, guides, and case studies.
                     </p>
                 </div>

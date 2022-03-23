@@ -7,7 +7,7 @@ export const features = [
     {
         title: 'All React renderers',
         subtitle:
-            'In React apps, your choice of renderer is just an implementation detail. So is in App Actions. We support all renderers, including react-three-fiber.',
+            'In React apps, your choice of the renderer is just an implementation detail. So is in App Actions. We support all renderers, including react-three-fiber.',
     },
     {
         title: 'Enhanced stability',
@@ -22,11 +22,11 @@ export const features = [
     {
         title: 'Declarative interface',
         subtitle:
-            'React is declarative, your tests should be too. App Actions tests are using a declarative YAML format, which makes tests cleaner, easier to maintain and makes test recording more powerful.',
+            'React is declarative; your tests should be too. App Actions tests use a declarative YAML format, which makes tests cleaner, easier to maintain, and more powerful test recording.',
     },
     {
         title: 'Incremental adaptation',
         subtitle:
-            'App Actions composes great with Cypress. If you already have a Cypress codebase, gradual migration will be a breeze.',
+            'App Actions composes great with Cypress. Gradually migration will be a breeze if you already have a Cypress codebase.',
     },
 ];

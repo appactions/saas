@@ -36,9 +36,7 @@ const Features = () => (
             <article className="w-full sm:border-gray-500 !pt-0">
                 <div className="lg:flex">
                     <FeatureHeader
-                        icon={
-                            <Atom className="mr-4 w-12 sm:w-20 h-auto sm:mr-0" />
-                        }
+                        icon={<Atom className="mr-4 w-12 sm:w-20 h-auto sm:mr-0" />}
                         title="Built for developers"
                         ctaHref="https://docs.appactions.com/#innovation"
                     />
@@ -58,10 +56,8 @@ const Features = () => (
                                     All React renderers
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    In React apps, your choice of renderer is
-                                    just an implementation detail. So is in App
-                                    Actions. We support all renderers, including
-                                    react-three-fiber.
+                                    In React apps, your choice of the renderer is just an implementation detail. So is
+                                    in App Actions. We support all renderers, including react-three-fiber.
                                 </p>
                             </div>
                         </motion.div>
@@ -74,11 +70,9 @@ const Features = () => (
                                     Declarative interface
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    React is declarative, your tests should be
-                                    too. App Actions tests are using a
-                                    declarative YAML format, which makes tests
-                                    cleaner, easier to maintain and makes test
-                                    recording more powerful.
+                                    React is declarative; your tests should be too. App Actions tests use a declarative
+                                    YAML format, making tests cleaner, easier to maintain, and more powerful test
+                                    recording.
                                 </p>
                             </div>
                         </motion.div>
@@ -92,12 +86,9 @@ const Features = () => (
                                     Low maintenance
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    E2E tests traditionally required a lot of
-                                    maintenance. We figured out a way to
-                                    separate implementation details from the
-                                    test declaration in a better way. This
-                                    results in future-proof tests that only need
-                                    your attention when UX changes.
+                                    E2E tests traditionally required a lot of maintenance. We figured out a way to
+                                    separate implementation details from the test declaration better. This results in
+                                    future-proof tests that only need your attention when UX changes.
                                 </p>
                             </div>
                         </motion.div>
@@ -110,10 +101,8 @@ const Features = () => (
                                     Result is code
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    We believe test recorders shouldn't create a
-                                    walled garden, the output should be
-                                    high-quality code, that you can check into
-                                    your version control system.
+                                    We believe test recorders shouldn't create a walled garden; the output should be
+                                    high-quality code that you can check into your version control system.
                                 </p>
                             </div>
                         </motion.div>
@@ -133,9 +122,7 @@ const Features = () => (
             <article className="w-full mt-20 sm:mt-40">
                 <div className="lg:flex">
                     <FeatureHeader
-                        icon={
-                            <Rainbow className="mr-4 w-12 sm:w-20 h-auto sm:mr-0" />
-                        }
+                        icon={<Rainbow className="mr-4 w-12 sm:w-20 h-auto sm:mr-0" />}
                         title="Great for testers"
                         ctaHref="https://docs.appactions.com/#for-developers"
                     />
@@ -156,9 +143,8 @@ const Features = () => (
                                     Test recording
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Writing tests is boring, let's record them.
-                                    Thanks to our declarative interface, output
-                                    is easy to read and maintain.
+                                    Writing tests is boring; let's record them. Thanks to our declarative interface, the
+                                    output is easy to read and maintain.
                                 </p>
                             </div>
                         </motion.div>
@@ -171,10 +157,8 @@ const Features = () => (
                                     Enhanced stability
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    Integrating with React has a serious
-                                    benefit: the test runner can make informed
-                                    decisions based on your app's state, making
-                                    significantly more stable tests.
+                                    Integrating with React has a serious benefit: the test runner can make informed
+                                    decisions based on your app's state, making significantly more stable tests.
                                 </p>
                             </div>
                         </motion.div>
@@ -187,9 +171,8 @@ const Features = () => (
                                     Incremental adaptation
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    App Actions composes great with Cypress. If
-                                    you already have a Cypress codebase, gradual
-                                    migration will be a breeze.
+                                    App Actions composes great with Cypress. Gradually migration will be a breeze if you
+                                    already have a Cypress codebase.
                                 </p>
                             </div>
                         </motion.div>
@@ -202,8 +185,7 @@ const Features = () => (
                                     Gentle learning curve
                                 </h4>
                                 <p className="text-lg text-gray-700 opacity-60 pt-4">
-                                    No need to learn extensive APIs, test
-                                    writing happens by an intuitive test
+                                    There is no need to learn extensive APIs; test writing happens by an intuitive test
                                     recorder.
                                 </p>
                             </div>
