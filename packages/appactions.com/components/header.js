@@ -22,7 +22,7 @@ function Header() {
                             </a>
                         </Link>
                     </div>
-                    <nav className="flex space-x-10">
+                    {/* <nav className="flex space-x-10">
                         <Link href="https://docs.appactions.com/">
                             <a
                                 className="text-xl font-medium text-white opacity-80 border-b-2 border-transparent hover:border-white"
@@ -50,7 +50,7 @@ function Header() {
                                 Book a demo
                             </a>
                         </Link>
-                    </nav>
+                    </nav> */}
                 </div>
             </div>
         </motion.div>
